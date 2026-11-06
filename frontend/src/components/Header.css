@@ -1,0 +1,21 @@
+.site-header{position:sticky;top:0;z-index:50;background:#FAF8F5;border-bottom:1px solid #e5dfd3;padding-top:env(safe-area-inset-top)}
+.barizone-masthead{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:8px;min-height:100px;padding:6px 0}
+.masthead-menu{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:44px;min-height:44px;padding:5px;border:1px solid #e5dfd3;border-radius:12px;color:#0b2545;background:#fff}
+.masthead-menu span{font-size:10px;font-weight:700}
+.barizone-masthead .masthead-brands{justify-content:center;gap:clamp(4px,2vw,20px)}
+.masthead-logo{display:block;width:96px;height:96px;object-fit:contain}
+.masthead-subscribe{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border-radius:12px;background:#d9531e;color:#fff;font-size:14px;font-weight:800;line-height:1.2;text-align:center;white-space:nowrap}
+.masthead-subscribe:hover{background:#b74417}
+.masthead-menu:focus-visible,.masthead-subscribe:focus-visible{outline:2px solid #0b2545;outline-offset:3px}
+@media(min-width:640px){.masthead-subscribe{flex-direction:row;gap:4px}.masthead-logo{width:112px;height:112px}}
+@media(max-width:639px){.barizone-masthead{min-height:80px;gap:4px}.masthead-logo{width:72px;height:72px}.masthead-subscribe{padding:8px 10px;font-size:12px}.barizone-masthead .header-radio-image{width:clamp(64px,17vw,90px)}.barizone-masthead .header-radio-caption{font-size:9px}}
+@media(max-width:359px){.masthead-logo{width:64px;height:64px}.masthead-subscribe{padding:8px;font-size:11px}.barizone-masthead .header-radio-image{width:60px}.barizone-masthead .header-radio-mark{padding:0}.barizone-masthead .masthead-brands{gap:2px}}
+
+/* Mobile: barra fissa compatta; il menu completo è nella barra in basso (MobileNav). */
+@media(max-width:767px){
+ .masthead-menu,#barizone-menu{display:none!important}
+ .barizone-masthead{grid-template-columns:minmax(0,1fr) auto;min-height:60px;padding:4px 0}
+ .barizone-masthead .masthead-brands{justify-content:flex-start}
+ .masthead-logo{width:52px;height:52px}
+ .masthead-subscribe{flex-direction:row;gap:4px;min-height:44px}
+}

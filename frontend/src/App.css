@@ -1,0 +1,55 @@
+.App { min-height: 100vh; }
+main { min-width: 0; }
+main :where(h1, h2, h3, p, dd, a) { overflow-wrap: anywhere; }
+.home-news-flow { display: flex; flex-direction: column; gap: 12px; }
+.home-news-first { order: 0; }
+@media (max-width: 1023px) {
+  .home-news-item { order: 2; }
+  .home-news-first { order: 0; }
+  .home-spotlight { order: 1; border: 2px solid #D9531E; border-radius: 14px; }
+}
+.home-news-item { min-width: 0; }
+.home-spotlight { min-width: 0; }
+/* Let successive articles use the space beside the company, then the full row. */
+@media (min-width: 1024px) {
+  .home-news-flow { display: flow-root; }
+  .home-spotlight-sidebar { float: right; width: 32%; margin: 0 0 12px 16px; }
+  .home-news-item { display: flow-root; margin-bottom: 12px; }
+  .home-news-item:last-child { margin-bottom: 0; }
+}
+.adaptive-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; align-items: start; }
+
+.weather-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); gap: 12px; }
+
+/* ── Mobile-first ─────────────────────────────────────────────── */
+/* Spazio per la barra di navigazione inferiore (solo mobile). */
+@media (max-width:767px){
+  .App{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
+  /* 16px evita lo zoom automatico di Safari iOS quando si tocca un campo. */
+  input,select,textarea{font-size:16px!important}
+  /* I ticker e la barra email scorrono via con la pagina (non sono più fissi). */
+  .header-extras .news-ticker{margin:4px 8px}
+}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:72px}
+a,button,[role=button],input,select,textarea,label{touch-action:manipulation;-webkit-tap-highlight-color:rgba(217,83,30,.15)}
+:focus-visible{outline:2px solid #0b2545;outline-offset:2px}
+
+/* Link "Vai al contenuto" per tastiera e lettori di schermo */
+.skip-link{position:absolute;left:8px;top:-60px;z-index:100;padding:12px 16px;border-radius:10px;background:#0b2545;color:#fff;font-weight:700}
+.skip-link:focus{top:8px}
+main:focus{outline:none}
+
+/* Segnaposto di caricamento */
+.skeleton{border-radius:10px;background:linear-gradient(90deg,#efe9dd 25%,#f7f3ec 50%,#efe9dd 75%);background-size:200% 100%}
+@media (prefers-reduced-motion:no-preference){.skeleton{animation:skeleton 1.2s ease-in-out infinite}}
+@keyframes skeleton{from{background-position:200% 0}to{background-position:-200% 0}}
+
+/* Aree toccabili di almeno 44×44 px su telefono (Apple HIG; WCAG 2.5.8 chiede almeno 24 px). */
+@media (max-width:767px){
+  main button{min-height:44px}
+  footer a{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+  .header-extras .news-ticker{height:52px}
+  .header-extras .news-ticker-label{height:44px}
+  .header-extras .news-ticker-item{min-height:44px}
+  .header-extras .news-ticker-control{min-width:44px;min-height:44px}
+}

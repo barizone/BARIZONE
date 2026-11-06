@@ -1,0 +1,44 @@
+# Produzione su un singolo server (VPS): Caddy (HTTPS automatico Let's Encrypt) → app → PostgreSQL.
+# Prerequisiti: DNS di barizone.it puntato al server, file .env con i segreti (vedi .env.example).
+#   docker compose -f docker-compose.prod.yml --env-file .env up -d --build
+services:
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: barizone
+      POSTGRES_USER: barizone
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:?imposta DATABASE_PASSWORD}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U barizone"]
+      interval: 10s
+      retries: 10
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      DATABASE_URL: jdbc:postgresql://db:5432/barizone
+      DATABASE_USERNAME: barizone
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    command: caddy reverse-proxy --from ${DOMAIN:-barizone.it} --to app:8080
+    volumes:
+      - caddy-data:/data
+    depends_on:
+      - app
+
+volumes:
+  db-data:
+  caddy-data:

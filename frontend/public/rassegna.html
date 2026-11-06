@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Barizone · News e quartieri</title>
+    <link rel="icon" href="/barizone-mark.svg" />
+    <style>
+      :root {
+        --blue: #0b2545;
+        --orange: #d9531e;
+        --cream: #f8f5ee;
+        --border: #e5dfd3;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--blue);
+        font:
+          16px/1.6 system-ui,
+          sans-serif;
+      }
+      header {
+        background: white;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav {
+        max-width: 1240px;
+        margin: auto;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .logo {
+        width: 155px;
+        max-height: 64px;
+        object-fit: contain;
+      }
+      .nav a {
+        color: var(--blue);
+        text-decoration: none;
+        font-weight: 650;
+      }
+      .nav .back {
+        margin-left: auto;
+        font-size: 14px;
+      }
+      .ticker {
+        display: flex;
+        background: var(--blue);
+        color: white;
+        overflow: hidden;
+        align-items: center;
+      }
+      .label {
+        background: var(--orange);
+        padding: 12px 18px;
+        font-size: 14px;
+        font-weight: 800;
+        flex-shrink: 0;
+      }
+      .window {
+        overflow: hidden;
+        flex: 1;
+      }
+      .track {
+        display: flex;
+        width: max-content;
+        animation: scroll 65s linear infinite;
+      }
+      .group {
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        padding-right: 48px;
+        white-space: nowrap;
+      }
+      .group span {
+        padding: 10px 0;
+      }
+      .ticker button {
+        background: var(--blue);
+        color: white;
+        border: 0;
+        border-left: 1px solid #ffffff55;
+        padding: 14px;
+        cursor: pointer;
+      }
+      .ticker:hover .track,
+      .ticker:focus-within .track,
+      .paused .track {
+        animation-play-state: paused;
+      }
+      @keyframes scroll {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      main {
+        max-width: 1240px;
+        margin: auto;
+        padding: 32px 24px;
+      }
+      h1 {
+        font:
+          900 clamp(36px, 5vw, 60px) / 1.1 Georgia,
+          serif;
+        margin: 8px 0 16px;
+        letter-spacing: -1px;
+      }
+      h2 {
+        font:
+          800 30px/1.2 Georgia,
+          serif;
+        margin: 0;
+      }
+      h3 {
+        font:
+          750 24px/1.25 Georgia,
+          serif;
+        margin: 12px 0;
+      }
+      .eyebrow {
+        font-size: 14px;
+        color: var(--orange);
+        font-weight: 750;
+        letter-spacing: 0.05em;
+      }
+      .stamp {
+        font-size: 14px;
+        color: #506174;
+      }
+      .notice {
+        padding: 12px 18px;
+        background: white;
+        border-left: 4px solid var(--orange);
+        margin: 22px 0;
+      }
+      .useful {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin: 24px 0;
+      }
+      .useful article {
+        padding: 22px;
+        background: var(--blue);
+        color: white;
+        border-radius: 8px;
+      }
+      .useful strong {
+        color: #f0bd63;
+      }
+      .useful a {
+        color: white;
+      }
+      .controls {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 28px 0;
+      }
+      select,
+      button {
+        font: inherit;
+        padding: 10px 14px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: white;
+        color: var(--blue);
+      }
+      .tabs {
+        display: flex;
+        gap: 8px;
+      }
+      .tabs button {
+        cursor: pointer;
+      }
+      .tabs button[aria-pressed="true"] {
+        background: var(--blue);
+        color: white;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .card {
+        background: white;
+        border: 1px solid var(--border);
+        padding: 24px;
+        border-radius: 8px;
+      }
+      .card p {
+        margin: 12px 0;
+      }
+      .tag {
+        font-size: 14px;
+        color: var(--orange);
+        font-weight: 750;
+      }
+      .meta {
+        font-size: 14px;
+        color: #536273;
+        border-top: 1px solid var(--border);
+        padding-top: 12px;
+      }
+      .card a {
+        color: var(--blue);
+        font-weight: 700;
+      }
+      .access {
+        background: #edf3f7;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      .sectionline {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 16px;
+        margin-bottom: 24px;
+      }
+      .empty {
+        padding: 24px;
+        background: white;
+      }
+      .culture {
+        margin-top: 36px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      footer {
+        font-size: 14px;
+        margin-top: 36px;
+        padding: 20px 0;
+        border-top: 1px solid var(--border);
+      }
+      a:focus-visible,
+      button:focus-visible,
+      select:focus-visible {
+        outline: 3px solid var(--orange);
+        outline-offset: 3px;
+      }
+      @media (max-width: 700px) {
+        .nav {
+          gap: 10px 12px;
+          flex-wrap: wrap;
+          padding: 12px 16px;
+        }
+        .logo {
+          width: 108px;
+          max-height: 42px;
+        }
+        .nav > a:not(.back) {
+          display: inline-flex;
+          font-size: 13px;
+        }
+        .nav .back {
+          font-size: 13px;
+        }
+        main {
+          padding: 24px 16px;
+        }
+        .useful,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .label {
+          padding: 12px 10px;
+        }
+        .controls {
+          align-items: stretch;
+        }
+        .tabs {
+          width: 100%;
+        }
+        .card {
+          padding: 20px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .track {
+          animation: none;
+        }
+        .window {
+          overflow-x: auto;
+        }
+        .group[aria-hidden="true"] {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="/"><img class="logo" src="/logo.png" alt="Barizone" /></a
+        ><a href="#contenuti" id="news-nav">Notizie</a
+        ><a href="/quartieri">Quartieri</a
+        ><a href="#contenuti" id="events-nav">Eventi</a
+        ><a href="/aziende">Aziende</a
+        ><a class="back" href="/">Home Barizone</a>
+      </nav>
+    </header>
+    <div class="ticker" aria-label="Meteo e notizie a scorrimento">
+      <span class="label">BARI ORA</span>
+      <div class="window"><div class="track" id="track"></div></div>
+      <button
+        id="pause"
+        aria-label="Metti in pausa lo scorrimento"
+        aria-pressed="false"
+      >
+        Ⅱ
+      </button>
+    </div>
+    <main>
+      <div class="eyebrow">BARIZONE · NEWS E QUARTIERI</div>
+      <h1>La città, ogni giorno.</h1>
+      <p class="stamp">
+        Rassegna del 4 ottobre 2026 · Fonti consultate e link originali
+      </p>
+      <div class="notice">
+        <b>Anteprima della rassegna.</b> Le notizie qui mostrate sono
+        un’istantanea del 4 ottobre 2026. Il collegamento automatico alla
+        redazione non è ancora attivo. Il meteo viene richiesto al servizio alla
+        visita.
+      </div>
+      <div class="useful">
+        <article>
+          <strong>Scuole · tutta Bari</strong>
+          <h3>Mense regolari</h3>
+          <p>
+            Pomodoro fresco sospeso in via cautelativa e sostituito con altri
+            alimenti. Il Comune non segnala casi collegati nelle scuole baresi.
+          </p>
+        </article>
+        <article>
+          <strong>Trasporti · oggi</strong>
+          <h3>Bus verso lo stadio</h3>
+          <p>
+            Dalle 14 alle 21 variazioni delle linee 2, 2/, 6, 22, 27 e 42 per il
+            Trofeo CONI.
+          </p>
+          <a
+            href="https://www.amtab.it/it/9-uncategorised/3536-differimento-capolinea-piscine-comunali-variazioni-di-percorso-linee-2-2-6-22-27-e-42-e-potenziamento-aree-di-sosta"
+            target="_blank"
+            rel="noopener"
+            >Avviso AMTAB</a
+          >
+        </article>
+        <article>
+          <strong>Carbonara · oggi</strong>
+          <h3>Linea 4 dalle 18:30</h3>
+          <p>
+            Possibili ritardi per il passaggio della processione della Madonna
+            del Rosario.
+          </p>
+          <a
+            href="https://www.amtab.it/it/140-news-chatbot/3533-linea-4"
+            target="_blank"
+            rel="noopener"
+            >Avviso AMTAB</a
+          >
+        </article>
+      </div>
+      <div class="controls">
+        <div class="tabs">
+          <button data-tab="news" aria-pressed="true">Notizie</button
+          ><button data-tab="events" aria-pressed="false">Eventi</button>
+        </div>
+        <label for="quartiere">Quartiere</label
+        ><select id="quartiere">
+          <option value="">Tutti i quartieri</option>
+        </select>
+      </div>
+      <section id="contenuti">
+        <div class="sectionline">
+          <h2 id="heading">Notizie verificate</h2>
+          <span id="count" class="stamp"></span>
+        </div>
+        <div class="grid" id="cards"></div>
+      </section>
+      <section class="culture">
+        <div class="eyebrow">JAPIGIA · STORIE DELLA CITTÀ</div>
+        <h2>Le persone dietro i luoghi</h2>
+        <article class="card" style="margin-top: 20px">
+          <span class="tag"
+            >Approfondimento · articolo e video della fonte</span
+          >
+          <h3>
+            “Un caffè con…” l’edicola Sinibaldi a Japigia: “I giornali non si
+            vendono più e ci siamo rinnovati”
+          </h3>
+          <p>
+            Il racconto di Maurizio e dell’edicola di via Caldarola: nuovi
+            servizi e rapporti quotidiani con i clienti del quartiere.
+          </p>
+          <p class="meta">
+            Telebari · Pubblicato il 2 ottobre 2026 · Data della ripresa non
+            specificata
+          </p>
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://www.telebari.it/storie/267353-un-caffe-con-ledicola-sinibaldi-a-japigia-i-giornali-non-si-vendono-piu-e-ci-siamo-rinnovati-video.html"
+            >Leggi e guarda il video su Telebari</a
+          >
+        </article>
+      </section>
+      <footer>
+        Nessun articolo o immagine delle testate viene riprodotto integralmente.
+        Le schede rimandano alle fonti originali. Prezzi e prenotazioni non
+        confermati sono indicati nelle singole schede.
+      </footer>
+    </main>
+    <script>
+      const news = [
+          {
+            q: "Tutta Bari",
+            cat: "Scuola e servizi",
+            title:
+              "Comune Bari, ‘stop a pomodori nelle mense ma qui nessun caso di salmonella’",
+            summary:
+              "Il pomodoro fresco viene sospeso in via precauzionale nelle mense scolastiche. Il Comune dichiara che nelle scuole baresi non risultano casi collegati alle segnalazioni. La refezione continua con alimenti sostitutivi.",
+            fact: "Comunicazione del 3 ottobre 2026",
+            pub: "3 ottobre 2026 · 19:27",
+            source: "ANSA Puglia",
+            url: "https://www.ansa.it/puglia/notizie/2026/10/03/comune-bari-stop-a-pomodori-nelle-mense-ma-qui-nessun-caso-di-salmonella_3d2639f3-82c9-457a-9aa2-abafcb9d4129.html",
+          },
+          {
+            q: "Quartiere da verificare",
+            cat: "Mobilità",
+            title:
+              "Amtab, soppressione provvisoria fermata in viale De Laurentis",
+            summary:
+              "La fermata “De Laurentis - M. Luter King” viene sospesa per l’intero servizio il 6, 7, 13 e 14 ottobre. Alternative indicate: “C. Vaticano II 75” e “Laurentis - st Caffè”.",
+            fact: "6, 7, 13 e 14 ottobre 2026",
+            pub: "4 ottobre 2026 · ora non indicata",
+            source: "BariViva · comunicato AMTAB",
+            url: "https://www.bariviva.it/notizie/amtab-soppressione-provvisoria-fermata-in-viale-de-laurentis/",
+          },
+          {
+            q: "Tutta Bari",
+            cat: "Sport",
+            title: "Salernitana-Bari, le probabili formazioni e dove vederla",
+            summary:
+              "I biancorossi giocano a Salerno, allo stadio Arechi, alle 20:30. BariViva indica diretta su Rai Sport, Sky Sport e Now. Le formazioni previste non sono ancora quelle ufficiali.",
+            fact: "4 ottobre 2026 · 20:30 · Salerno",
+            pub: "4 ottobre 2026 · 08:00",
+            source: "BariViva",
+            url: "https://www.bariviva.it/sport/salernitana-bari-le-probabili-formazioni-e-dove-vederla-1/",
+          },
+          {
+            q: "Quartiere da verificare",
+            cat: "Cronaca",
+            title:
+              "Bari, incidente sul vialone dell’aeroporto: auto ribaltata su un fianco",
+            summary:
+              "Telebari riferisce di un’auto ribaltata su viale Enzo Ferrari e dell’intervento della Polizia Locale. La dinamica resta da accertare. Non sono confermati blocchi stradali attuali.",
+            fact: "Pomeriggio del 3 ottobre 2026",
+            pub: "3 ottobre 2026",
+            source: "Telebari",
+            url: "https://www.telebari.it/attualita/267527-bari-incidente-sul-vialone-dellaeroporto-auto-ribaltata-su-un-fianco-qui-sfrecciano-come-pazzi.html",
+          },
+        ],
+        events = [
+          {
+            q: "Torre a Mare",
+            cat: "Musica e quartiere",
+            title: "Le Feste di Santomare",
+            summary:
+              "Al porto: laboratorio creativo 11–13, scacchi 16–20, Maninni alle 21, spettacolo alle 21:30 e comicità alle 22.",
+            fact: "4 ottobre 2026 · porto di Torre a Mare",
+            pub: "2 ottobre 2026 (Puglia Culture); programma 3 ottobre (BariViva)",
+            source: "Puglia Culture · organizzatore",
+            url: "https://www.pugliaculture.it/le-news-di-bari/le-feste-di-santomare-domani-e-domenica-e-torre-a-mare/",
+            access: "Gratuito · accesso libero",
+            extra:
+              "https://www.bariviva.it/notizie/le-feste-di-santomare-2026-nel-fine-settimana-a-torre-a-mare-la-seconda-tappa/",
+          },
+          {
+            q: "Bari Vecchia",
+            cat: "Legalità e partecipazione",
+            title: "Inaugurazione della sede dell’associazione Michele Fazio",
+            summary:
+              "Un bene confiscato diventa uno spazio dedicato alla memoria di Michele Fazio e all’antimafia sociale.",
+            fact: "5 ottobre 2026 · 17:30 · strada dei Gesuiti 15",
+            pub: "3 ottobre 2026",
+            source: "BariViva · comunicato stampa",
+            url: "https://www.bariviva.it/notizie/il-5-ottobre-l-inaugurazione-della-nuova-sede-dell-associazione-intitolata-a-michele-fazio-a-bari-vecchia/",
+            access: "Prezzo e prenotazione non indicati",
+          },
+          {
+            q: "Bari Vecchia",
+            cat: "Salute e inclusione",
+            title: "Giornata Mondiale della Salute Mentale",
+            summary:
+              "Presentazione dei servizi, dei progetti e delle attività del Dipartimento di Salute Mentale ASL Bari.",
+            fact: "10 ottobre 2026 · 10–18 · ex Mercato del Pesce, piazza del Ferrarese",
+            pub: "4 ottobre 2026",
+            source: "BariViva · programma ASL Bari",
+            url: "https://www.bariviva.it/notizie/giornata-mondiale-salute-mentale-la-asl-bari-promuove-ascolto-prevenzione-e-comunita-con-eventi-sul-territorio/",
+            access:
+              "Aperto alla cittadinanza · prezzo e prenotazione da verificare",
+          },
+        ];
+      let tab = "news";
+      const quarters = [
+        "Tutta Bari",
+        "Bari Vecchia",
+        "Murat",
+        "Madonnella",
+        "Libertà",
+        "Carrassi",
+        "San Pasquale",
+        "Picone",
+        "Poggiofranco",
+        "Japigia",
+        "San Paolo",
+        "San Girolamo",
+        "Fesca",
+        "Marconi",
+        "Stanic",
+        "Villaggio del Lavoratore",
+        "Carbonara",
+        "Ceglie del Campo",
+        "Loseto",
+        "Palese",
+        "Santo Spirito",
+        "San Pio",
+        "Catino",
+        "Torre a Mare",
+        "Sant’Anna",
+        "Quartiere da verificare",
+      ];
+      const select = document.getElementById("quartiere");
+      quarters.forEach((q) => select.add(new Option(q, q)));
+      const esc = (s) =>
+        String(s).replace(
+          /[&<>"']/g,
+          (c) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[c],
+        );
+      function render() {
+        const items = (tab === "news" ? news : events).filter(
+          (x) => !select.value || x.q === select.value,
+        );
+        document.getElementById("heading").textContent =
+          tab === "news" ? "Notizie verificate" : "Eventi in programma";
+        document.getElementById("count").textContent =
+          items.length + " contenuti";
+        document
+          .querySelectorAll("[data-tab]")
+          .forEach((b) =>
+            b.setAttribute("aria-pressed", b.dataset.tab === tab),
+          );
+        document.getElementById("cards").innerHTML = items.length
+          ? items
+              .map(
+                (n) =>
+                  `<article class="card"><span class="tag"><a href="/quartieri?q=${encodeURIComponent(n.q)}">${esc(n.q)}</a> · ${esc(n.cat)}</span><h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p>${n.access ? `<p class="access">${esc(n.access)}</p>` : ""}<p class="meta"><b>${tab === "news" ? "Fatto" : "Appuntamento"}:</b> ${esc(n.fact)}<br><b>Pubblicazione:</b> ${esc(n.pub)}<br><b>Fonte:</b> ${esc(n.source)}</p><a href="${esc(n.url)}" target="_blank" rel="noopener">Apri fonte originale</a>${n.extra ? ` · <a href="${esc(n.extra)}" target="_blank" rel="noopener">Programma e orari</a>` : ""}</article>`,
+              )
+              .join("")
+          : '<p class="empty">Nessun contenuto verificato per questo quartiere nella rassegna. Seleziona un altro quartiere oppure “Tutti i quartieri”.</p>';
+      }
+      select.onchange = render;
+      document.querySelectorAll("[data-tab]").forEach(
+        (b) =>
+          (b.onclick = () => {
+            tab = b.dataset.tab;
+            render();
+          }),
+      );
+      document.getElementById("events-nav").onclick = (e) => {
+        e.preventDefault();
+        tab = "events";
+        render();
+        window.scrollTo({ top: 0, behavior: "instant" });
+      };
+      document.getElementById("news-nav").onclick = (e) => {
+        e.preventDefault();
+        tab = "news";
+        render();
+        window.scrollTo({ top: 0, behavior: "instant" });
+      };
+      render();
+      let weather = "Meteo Bari · caricamento in corso";
+      function ticker() {
+        const texts = [
+          weather,
+          "Rassegna 4 ottobre · mense scolastiche regolari, pomodoro fresco sostituito",
+          "4 ottobre · variazioni bus verso Stadio delle Vittorie 14–21",
+          "Carbonara · linea 4, possibili ritardi dalle 18:30",
+          "Torre a Mare · Santomare, appuntamenti gratuiti",
+        ];
+        document.getElementById("track").innerHTML = [0, 1]
+          .map(
+            (i) =>
+              `<div class="group" ${i ? 'aria-hidden="true"' : ""}>${texts.map((t) => `<span>${esc(t)}</span>`).join("")}</div>`,
+          )
+          .join("");
+      }
+      ticker();
+      const pause = document.getElementById("pause");
+      pause.onclick = () => {
+        const paused = document
+          .querySelector(".ticker")
+          .classList.toggle("paused");
+        pause.textContent = paused ? "▶" : "Ⅱ";
+        pause.setAttribute("aria-pressed", paused);
+        pause.setAttribute(
+          "aria-label",
+          paused ? "Riprendi scorrimento" : "Metti in pausa lo scorrimento",
+        );
+      };
+      async function meteo() {
+        try {
+          const response = await fetch(
+            "https://api.open-meteo.com/v1/forecast?latitude=41.1171&longitude=16.8719&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&timezone=Europe%2FRome&forecast_days=1",
+            { signal: AbortSignal.timeout(12000) },
+          );
+          if (!response.ok) throw Error();
+          const data = await response.json();
+          const code = data.current.weather_code;
+          const condition =
+            code === 0
+              ? "sereno"
+              : code <= 3
+                ? "nuvoloso"
+                : code >= 95
+                  ? "temporali"
+                  : code >= 71 && code <= 86
+                    ? "neve"
+                    : code >= 51
+                      ? "pioggia"
+                      : code >= 45
+                        ? "nebbia"
+                        : "condizioni variabili";
+          weather = `Meteo Bari · ${data.current.temperature_2m} °C · ${condition} · min ${data.daily.temperature_2m_min[0]}° / max ${data.daily.temperature_2m_max[0]}° · ${data.current.time.replace("T", " ")} · Open-Meteo`;
+        } catch {
+          weather = "Meteo Bari · servizio temporaneamente non disponibile";
+        }
+        ticker();
+      }
+      meteo();
+      setInterval(meteo, 900000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+{
+  "news": [
+    {
+      "q": "Tutta Bari",
+      "cat": "Scuola e servizi",
+      "title": "Comune Bari, ‘stop a pomodori nelle mense ma qui nessun caso di salmonella’",
+      "summary": "Il pomodoro fresco viene sospeso in via precauzionale nelle mense scolastiche. Il Comune dichiara che nelle scuole baresi non risultano casi collegati alle segnalazioni. La refezione continua con alimenti sostitutivi.",
+      "fact": "Comunicazione del 3 ottobre 2026",
+      "pub": "3 ottobre 2026 · 19:27",
+      "source": "ANSA Puglia",
+      "url": "https://www.ansa.it/puglia/notizie/2026/10/03/comune-bari-stop-a-pomodori-nelle-mense-ma-qui-nessun-caso-di-salmonella_3d2639f3-82c9-457a-9aa2-abafcb9d4129.html"
+    },
+    {
+      "q": "Quartiere da verificare",
+      "cat": "Mobilità",
+      "title": "Amtab, soppressione provvisoria fermata in viale De Laurentis",
+      "summary": "La fermata “De Laurentis - M. Luter King” viene sospesa per l’intero servizio il 6, 7, 13 e 14 ottobre. Alternative indicate: “C. Vaticano II 75” e “Laurentis - st Caffè”.",
+      "fact": "6, 7, 13 e 14 ottobre 2026",
+      "pub": "4 ottobre 2026 · ora non indicata",
+      "source": "BariViva · comunicato AMTAB",
+      "url": "https://www.bariviva.it/notizie/amtab-soppressione-provvisoria-fermata-in-viale-de-laurentis/"
+    },
+    {
+      "q": "Tutta Bari",
+      "cat": "Sport",
+      "title": "Salernitana-Bari, le probabili formazioni e dove vederla",
+      "summary": "I biancorossi giocano a Salerno, allo stadio Arechi, alle 20:30. BariViva indica diretta su Rai Sport, Sky Sport e Now. Le formazioni previste non sono ancora quelle ufficiali.",
+      "fact": "4 ottobre 2026 · 20:30 · Salerno",
+      "pub": "4 ottobre 2026 · 08:00",
+      "source": "BariViva",
+      "url": "https://www.bariviva.it/sport/salernitana-bari-le-probabili-formazioni-e-dove-vederla-1/"
+    },
+    {
+      "q": "Quartiere da verificare",
+      "cat": "Cronaca",
+      "title": "Bari, incidente sul vialone dell’aeroporto: auto ribaltata su un fianco",
+      "summary": "Telebari riferisce di un’auto ribaltata su viale Enzo Ferrari e dell’intervento della Polizia Locale. La dinamica resta da accertare. Non sono confermati blocchi stradali attuali.",
+      "fact": "Pomeriggio del 3 ottobre 2026",
+      "pub": "3 ottobre 2026",
+      "source": "Telebari",
+      "url": "https://www.telebari.it/attualita/267527-bari-incidente-sul-vialone-dellaeroporto-auto-ribaltata-su-un-fianco-qui-sfrecciano-come-pazzi.html"
+    },
+    {
+      "q": "Carbonara",
+      "cat": "Mobilità · promemoria per oggi",
+      "title": "LINEA 4 — Festeggiamenti in onore di Maria SS. del Rosario",
+      "summary": "Per il passaggio della processione sono possibili rallentamenti e ritardi della linea 4 dalle 18:30 fino al termine delle esigenze. I bus attenderanno il passaggio dei partecipanti.",
+      "fact": "4 ottobre 2026 · dalle 18:30",
+      "pub": "Data non indicata · ordinanza del 28 settembre 2026",
+      "source": "AMTAB · avviso ufficiale, non nuova notizia",
+      "url": "https://www.amtab.it/it/140-news-chatbot/3533-linea-4"
+    }
+  ],
+  "events": [
+    {
+      "q": "Torre a Mare",
+      "cat": "Musica e quartiere",
+      "title": "Le Feste di Santomare",
+      "summary": "Al porto: laboratorio creativo 11–13, scacchi 16–20, Maninni alle 21, spettacolo alle 21:30 e comicità alle 22.",
+      "fact": "4 ottobre 2026 · porto di Torre a Mare",
+      "pub": "2 ottobre 2026 (Puglia Culture); programma 3 ottobre (BariViva)",
+      "source": "Puglia Culture · organizzatore",
+      "url": "https://www.pugliaculture.it/le-news-di-bari/le-feste-di-santomare-domani-e-domenica-e-torre-a-mare/",
+      "access": "Gratuito · accesso libero",
+      "extra": "https://www.bariviva.it/notizie/le-feste-di-santomare-2026-nel-fine-settimana-a-torre-a-mare-la-seconda-tappa/"
+    },
+    {
+      "q": "Bari Vecchia",
+      "cat": "Legalità e partecipazione",
+      "title": "Inaugurazione della sede dell’associazione Michele Fazio",
+      "summary": "Un bene confiscato diventa uno spazio dedicato alla memoria di Michele Fazio e all’antimafia sociale.",
+      "fact": "5 ottobre 2026 · 17:30 · strada dei Gesuiti 15",
+      "pub": "3 ottobre 2026",
+      "source": "BariViva · comunicato stampa",
+      "url": "https://www.bariviva.it/notizie/il-5-ottobre-l-inaugurazione-della-nuova-sede-dell-associazione-intitolata-a-michele-fazio-a-bari-vecchia/",
+      "access": "Prezzo e prenotazione non indicati"
+    },
+    {
+      "q": "Bari Vecchia",
+      "cat": "Salute e inclusione",
+      "title": "Giornata Mondiale della Salute Mentale",
+      "summary": "Presentazione dei servizi, dei progetti e delle attività del Dipartimento di Salute Mentale ASL Bari.",
+      "fact": "10 ottobre 2026 · 10–18 · ex Mercato del Pesce, piazza del Ferrarese",
+      "pub": "4 ottobre 2026",
+      "source": "BariViva · programma ASL Bari",
+      "url": "https://www.bariviva.it/notizie/giornata-mondiale-salute-mentale-la-asl-bari-promuove-ascolto-prevenzione-e-comunita-con-eventi-sul-territorio/",
+      "access": "Aperto alla cittadinanza · prezzo e prenotazione da verificare"
+    }
+  ]
+}

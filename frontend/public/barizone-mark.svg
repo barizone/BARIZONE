@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Barizone</title><desc id="desc">La lettera B con il mare di Bari</desc>
+  <rect width="256" height="256" rx="46" fill="#0B2545"/>
+  <path d="M63 40h77c43 0 65 20 65 50 0 22-12 36-32 44 25 7 39 23 39 47 0 34-27 54-72 54H63V40zm42 35v43h32c17 0 27-8 27-21 0-14-10-22-28-22h-31zm0 77v47h34c20 0 31-8 31-23 0-16-12-24-32-24h-33z" fill="#FAF8F5"/>
+  <path d="M79 175c23-17 46-17 69 0s46 17 69 0" fill="none" stroke="#D9531E" stroke-width="12" stroke-linecap="round"/>
+  <path d="M79 199c23-17 46-17 69 0s46 17 69 0" fill="none" stroke="#3D9DB0" stroke-width="10" stroke-linecap="round"/>
+</svg>

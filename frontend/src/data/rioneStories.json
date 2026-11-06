@@ -1,0 +1,842 @@
+[
+  {
+    "id": "bari-vecchia",
+    "name": "San Nicola / Bari Vecchia",
+    "title": "La città prima della città nuova",
+    "intro": "Vicoli, corti e pietra chiara: è il nucleo storico da cui Bari si è allargata verso l’entroterra e il mare.",
+    "origin": "San Nicola richiama il patrono e la basilica che ne custodisce le reliquie. “Bari Vecchia” distingue questo nucleo dalla città nuova, sviluppatasi nell’Ottocento oltre il suo perimetro.",
+    "history": "Le reliquie di Nicola arrivarono il 7 maggio 1087. La basilica sorse nell’area della Corte del Catapano e nel 1089 la cripta era già pronta. Nel borgo, la vicinanza fra basilica, cattedrale, castello e abitazioni racconta secoli di vita religiosa, scambi e trasformazioni. Non è un quartiere nato tutto insieme: le sue strade conservano strati diversi della storia cittadina.",
+    "sources": [
+      [
+        "Arcidiocesi Bari-Bitonto · Storia della basilica",
+        "https://www.arcidiocesibaribitonto.it/luoghi-di-culto/pontificia-basilica-san-nicola/storia"
+      ]
+    ],
+    "note": "La foto principale è del 1930; la seconda è del 1970. Nessun effetto “vintage” è stato aggiunto.",
+    "photoid": "bari-vecchia-1930",
+    "context": false,
+    "photo": {
+      "id": "bari-vecchia-1930",
+      "title": "Photo View of the right side of the Basilica of San Nicola in Bari 1930 - Touring Club Italiano s05977-01.jpg",
+      "author": "Touring Club Italiano / archivio fotografico",
+      "license": "CC BY-SA 4.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Photo_View_of_the_right_side_of_the_Basilica_of_San_Nicola_in_Bari_1930_-_Touring_Club_Italiano_s05977-01.jpg",
+      "date": "1930",
+      "caption": "Fianco della basilica di San Nicola, fotografia del 1930. Archivio Touring Club Italiano, s05977-01.",
+      "historic": true,
+      "src": "/rioni/bari-vecchia-1930.jpg"
+    },
+    "gallery": [
+      {
+        "id": "bari-vecchia",
+        "title": "Paolo Monti - Servizio fotografico (Bari, 1970) - BEIC 6332465.jpg",
+        "author": "Paolo Monti / BEIC",
+        "license": "CC BY-SA 4.0",
+        "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "photopage": "https://commons.wikimedia.org/wiki/File:Paolo_Monti_-_Servizio_fotografico_%28Bari%2C_1970%29_-_BEIC_6332465.jpg",
+        "date": "1970",
+        "caption": "Basilica di San Nicola, nel servizio fotografico di Paolo Monti del 1970. Archivio BEIC.",
+        "historic": true,
+        "src": "/rioni/bari-vecchia.jpg"
+      }
+    ]
+  },
+  {
+    "id": "murat",
+    "name": "Murat",
+    "title": "Il borgo nuovo disegnato a scacchiera",
+    "intro": "A sud del centro antico, strade dritte e isolati regolari raccontano un’idea diversa di città.",
+    "origin": "Il quartiere prende il nome da Gioacchino Murat, re di Napoli, che nel 1813 avviò l’espansione di Bari oltre il borgo antico.",
+    "history": "Il Murattiano segna il passaggio dalla trama di vicoli del centro storico a una maglia ordinata di strade. Nell’Ottocento e nel primo Novecento si arricchì di negozi, palazzi ed edifici pubblici. L’architettura eclettica e Liberty ne accompagnò la crescita. La stazione, sul suo margine meridionale, divenne una delle grandi porte di accesso alla città.",
+    "sources": [
+      [
+        "Ministero della Cultura · Architettura della prima metà del Novecento",
+        "https://catalogo.cultura.gov.it/itinerario/l-architettura-della-prima-meta-del-900-bari"
+      ]
+    ],
+    "note": "La cartolina del 1920 mostra la stazione sul bordo del quartiere, non il centro storico.",
+    "photoid": "murat",
+    "context": false,
+    "photo": {
+      "id": "murat",
+      "title": "Bari - Stazione FS - 1920.jpg",
+      "author": "Autore non identificato",
+      "license": "Pubblico dominio",
+      "licenseurl": "https://commons.wikimedia.org/wiki/File:Bari_-_Stazione_FS_-_1920.jpg",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Bari_-_Stazione_FS_-_1920.jpg",
+      "date": "1920",
+      "caption": "Bari Centrale sul margine meridionale del Murattiano, in una cartolina del 1920.",
+      "historic": true,
+      "src": "/rioni/murat.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "madonnella",
+    "name": "Madonnella",
+    "title": "Una piccola Madonna ha dato il nome al rione",
+    "intro": "Un’edicola votiva, il lungomare e l’espansione del Novecento: tre fili per leggere la storia di Madonnella.",
+    "origin": "Il nome deriva da un’antica immagine della Madonna venerata nella zona. La ricostruzione storica dell’edicola segnala la denominazione Madonnella già nel catasto del 1753.",
+    "history": "Prima dell’espansione urbana, l’immagine mariana era un riferimento fra i campi. Nel 1956 fu ricollocata in una nuova edicola, oggi in piazza Carabellese. Il quartiere si sviluppò nel Novecento insieme al lungomare monumentale: il suo paesaggio unisce abitazioni, palazzi pubblici e rapporto quotidiano con il mare.",
+    "sources": [
+      [
+        "Bari e… · L’edicola mariana alla Madonnella",
+        "https://www.bari-e.it/luoghi-sconosciuti/edicola-mariana-alla-madonnella/"
+      ],
+      [
+        "Ministero della Cultura · Architettura del Novecento",
+        "https://catalogo.cultura.gov.it/itinerario/l-architettura-della-prima-meta-del-900-bari"
+      ]
+    ],
+    "note": "Il panorama del 1952 è una veduta di contesto del lungomare di Bari: non delimita i confini del rione.",
+    "photoid": "madonnella",
+    "context": false,
+    "photo": {
+      "id": "madonnella",
+      "title": "Bari edicola Madonna in Largo Francesco Carabellese.jpg",
+      "author": "Diana Cimino Cocco",
+      "license": "CC BY-SA 4.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Bari_edicola_Madonna_in_Largo_Francesco_Carabellese.jpg",
+      "date": "2015",
+      "caption": "L’edicola mariana di piazza Carabellese. Foto del 17 maggio 2015.",
+      "historic": false,
+      "src": "/rioni/madonnella.jpg"
+    },
+    "gallery": [
+      {
+        "id": "madonnella-storica",
+        "title": "BA-Bari-1952-panorama-lungomare.jpg",
+        "author": "Albertomos (utente depositante)",
+        "license": "Pubblico dominio",
+        "licenseurl": "https://commons.wikimedia.org/wiki/File:BA-Bari-1952-panorama-lungomare.jpg",
+        "photopage": "https://commons.wikimedia.org/wiki/File:BA-Bari-1952-panorama-lungomare.jpg",
+        "date": "1952",
+        "caption": "Panorama del lungomare di Bari nel 1952. Immagine storica di contesto urbano.",
+        "historic": true,
+        "src": "/rioni/madonnella-storica.jpg"
+      }
+    ]
+  },
+  {
+    "id": "liberta",
+    "name": "Libertà",
+    "title": "Libertà: un nome, tante vite di quartiere",
+    "intro": "Facciate decorate, strade commerciali e luoghi di comunità: il Libertà racconta una parte importante dell’espansione moderna di Bari.",
+    "origin": "Una spiegazione ricorrente collega il nome Libertà alle prime architetture in stile Liberty. È la ricostruzione riportata dalle fonti divulgative consultate: non la presentiamo come un’etimologia dimostrata da un atto di denominazione.",
+    "history": "Il quartiere si sviluppa con l’espansione urbana del Novecento. Edifici, botteghe e spazi di incontro ne raccontano la storia commerciale e popolare. Il Comune ha dedicato a questo patrimonio il progetto “Passeggiate Liberty”, che propone di riscoprire architetture e vita sociale del rione. Il Redentore, nella foto, è uno dei suoi luoghi riconoscibili.",
+    "sources": [
+      [
+        "Comune di Bari · Passeggiate Liberty",
+        "https://www.comune.bari.it/-/2026-passeggiate-liberty"
+      ],
+      [
+        "Ricostruzione divulgativa · Libertà (Wikipedia)",
+        "https://it.wikipedia.org/wiki/Libert%C3%A0_(Bari)"
+      ]
+    ],
+    "note": "Origine del nome: interpretazione divulgativa da distinguere dalla storia documentata dell’architettura del rione.",
+    "photoid": "liberta",
+    "context": false,
+    "photo": {
+      "id": "liberta",
+      "title": "Bari - Chiesa del Santissimo Redentore - 2023-09-07 23-44-40 001.jpg",
+      "author": "Giugi30",
+      "license": "CC BY-SA 4.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Bari_-_Chiesa_del_Santissimo_Redentore_-_2023-09-07_23-44-40_001.jpg",
+      "date": "2023",
+      "caption": "Chiesa del Santissimo Redentore. Foto del 7 settembre 2023.",
+      "historic": false,
+      "src": "/rioni/liberta.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "carrassi",
+    "name": "Carrassi",
+    "title": "La città cresce oltre i binari",
+    "intro": "Dall’antico paesaggio di terreni e ville a un rione fitto di case, botteghe e luoghi di culto.",
+    "origin": "Carrassi è il cognome di una famiglia che possedeva terreni nella zona. Le ricostruzioni locali collegano la memoria della famiglia anche alla vicenda della parrocchia del Santissimo Sacramento.",
+    "history": "La ferrovia separava il nucleo centrale dalle aree meridionali dove sorsero Carrassi e San Pasquale. L’espansione del Novecento cambiò il paesaggio, prima meno urbanizzato. La Chiesa Russa è uno dei suoi segni più riconoscibili, ma il racconto del rione comprende anche le parrocchie cattoliche e la vita delle sue strade commerciali.",
+    "sources": [
+      [
+        "Carrassi · Inquadramento storico",
+        "https://it.wikipedia.org/wiki/Carrassi"
+      ],
+      [
+        "Bari e… · Storia del Santissimo Sacramento",
+        "https://www.bari-e.it/luoghi-sconosciuti/due-chiese-per-due-quartieri-la-nascita-dei-quartieri-fratelli-di-carrassi-e-san-pasquale-di-bari-prima-parte-la-tormentata-storia-della-chiesa-del-ss-sacramento/"
+      ]
+    ],
+    "note": "",
+    "photoid": "carrassi",
+    "context": false,
+    "photo": {
+      "id": "carrassi",
+      "title": "La Chiesa Russa Ortodossa di Bari.jpg",
+      "author": ">< g i g i ><",
+      "license": "CC BY 2.0",
+      "licenseurl": "https://creativecommons.org/licenses/by/2.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:La_Chiesa_Russa_Ortodossa_di_Bari.jpg",
+      "date": "2009",
+      "caption": "La Chiesa Russa a Carrassi. Foto del 12 aprile 2009.",
+      "historic": false,
+      "src": "/rioni/carrassi.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "san-pasquale",
+    "name": "San Pasquale",
+    "title": "Il nome di una chiesa, la storia di un quartiere",
+    "intro": "La crescita a sud della ferrovia ha unito luoghi di culto, abitazioni e poli di studio.",
+    "origin": "Il nome richiama San Pasquale Baylon e la chiesa omonima, intorno alla quale si è consolidata l’identità del rione.",
+    "history": "Il 26 giugno 1916 l’arcivescovo Giulio Vaccaro istituì le parrocchie di San Pasquale e del Santissimo Sacramento. Erano risposte alla crescita delle aree oltre la ferrovia. Il quartiere si trasformò poi con l’espansione residenziale e con la presenza universitaria: una storia urbana che non si esaurisce nel solo edificio da cui prende il nome.",
+    "sources": [
+      [
+        "Bari e… · Due chiese per due quartieri, San Pasquale",
+        "https://www.bari-e.it/luoghi-sconosciuti/due-chiese-per-due-quartieri-la-nascita-dei-quartieri-fratelli-di-carrassi-e-san-pasquale-di-bari-seconda-parte-san-pasquale-dallaltare-del-700-al-mosa/"
+      ]
+    ],
+    "note": "",
+    "photoid": "san-pasquale",
+    "context": false,
+    "photo": {
+      "id": "san-pasquale",
+      "title": "Bari - Chiesa di San Pasquale - 2024-09-24 21-30-45 001.png",
+      "author": "MimmuzzoMix",
+      "license": "CC BY-SA 4.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Bari_-_Chiesa_di_San_Pasquale_-_2024-09-24_21-30-45_001.png",
+      "date": "2024",
+      "caption": "Ingresso della chiesa di San Pasquale. Foto del 24 settembre 2024.",
+      "historic": false,
+      "src": "/rioni/san-pasquale.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "picone",
+    "name": "Picone",
+    "title": "Sotto le strade, la memoria dell’acqua",
+    "intro": "Il quartiere del Policlinico custodisce anche una storia di lame, masserie e percorsi molto più antichi.",
+    "origin": "Picone riprende il nome del torrente e della lama che interessavano questa parte del territorio barese.",
+    "history": "L’espansione oltre la ferrovia trasformò un paesaggio fatto anche di terreni, ville e insediamenti produttivi. Il Policlinico divenne un riferimento decisivo del quartiere. La guida promossa dalla Rete civica urbana Picone-Poggiofranco invita però a leggere un patrimonio più ampio: ipogei, masserie, edifici industriali e tracce del paesaggio precedente alle grandi costruzioni.",
+    "sources": [
+      [
+        "Urban Center Bari · Guida Picone e Poggiofranco",
+        "https://www.urbancenterbari.it/dati/picone-poggiofranco-guida/"
+      ],
+      [
+        "Picone · Origine del nome",
+        "https://it.wikipedia.org/wiki/Picone_(Bari)"
+      ]
+    ],
+    "note": "",
+    "photoid": "picone",
+    "context": false,
+    "photo": {
+      "id": "picone",
+      "title": "Bari Policlinico.jpg",
+      "author": "Vob85",
+      "license": "Pubblico dominio",
+      "licenseurl": "https://commons.wikimedia.org/wiki/File:Bari_Policlinico.jpg",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Bari_Policlinico.jpg",
+      "date": "non indicata",
+      "caption": "Il Policlinico di Bari. La pagina di provenienza non indica una data di scatto.",
+      "historic": false,
+      "src": "/rioni/picone.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "poggiofranco",
+    "name": "Poggiofranco",
+    "title": "Il nome di famiglia e la Bari che si allarga",
+    "intro": "Un rione dalla storia urbana recente, da leggere insieme al paesaggio rurale che lo precede.",
+    "origin": "Le fonti locali riconducono Poggiofranco alla famiglia Amoruso Manzari e al nome del suo capostipite. Le ricostruzioni divulgative citano Franco o Francesco: il legame familiare è riportato senza trasformare queste varianti in una certezza anagrafica.",
+    "history": "Lo sviluppo residenziale del secondo Novecento ha segnato il suo aspetto, con edifici moderni, giardini e nuovi assi viari. La storia dell’area si intreccia con quella di Picone: masserie, ville e lame precedono il quartiere contemporaneo e aiutano a capire cosa c’era prima dei palazzi.",
+    "sources": [
+      [
+        "Poggiofranco · Storia e nome",
+        "https://it.wikipedia.org/wiki/Poggiofranco"
+      ],
+      [
+        "Urban Center Bari · Guida Picone e Poggiofranco",
+        "https://www.urbancenterbari.it/dati/picone-poggiofranco-guida/"
+      ]
+    ],
+    "note": "L’origine riportata è una ricostruzione locale; non è stato reperito l’atto originario di denominazione.",
+    "photoid": "poggiofranco",
+    "context": false,
+    "photo": {
+      "id": "poggiofranco",
+      "title": "Parrocchia Mater Ecclesiae Bari interno.jpg",
+      "author": "Jaxxo78",
+      "license": "CC0 1.0",
+      "licenseurl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Parrocchia_Mater_Ecclesiae_Bari_interno.jpg",
+      "date": "2026",
+      "caption": "Interno della chiesa Mater Ecclesiae, a Poggiofranco. Foto del 1 febbraio 2026.",
+      "historic": false,
+      "src": "/rioni/poggiofranco.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "japigia",
+    "name": "Japigia",
+    "title": "Un nome antico per un quartiere moderno",
+    "intro": "La memoria della Puglia preromana incontra uno dei grandi ampliamenti residenziali del Novecento.",
+    "origin": "Il nome del quartiere viene da viale Japigia, a sua volta legato alla denominazione antica della regione abitata dagli Iapigi.",
+    "history": "Gli Iapigi sono un insieme di popolazioni dell’antica Puglia: il loro nome non significa che l’attuale quartiere sia un abitato ininterrotto di quell’epoca. Il rione moderno si sviluppò soprattutto nel secondo dopoguerra. La sua storia intreccia edilizia residenziale, trasformazioni del territorio e nuovi servizi: la radice del nome è antica, la forma urbana è molto più recente.",
+    "sources": [
+      [
+        "Japigia · Storia del quartiere",
+        "https://it.wikipedia.org/wiki/Japigia_(Bari)"
+      ],
+      [
+        "Treccani · Iapige e Iapigi",
+        "https://www.treccani.it/enciclopedia/iapige/"
+      ]
+    ],
+    "note": "",
+    "photoid": "japigia",
+    "context": false,
+    "photo": {
+      "id": "japigia",
+      "title": "Bari japigia residenze.jpg",
+      "author": "Podollo",
+      "license": "CC BY-SA 3.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Bari_japigia_residenze.jpg",
+      "date": "entro il 2007",
+      "caption": "Zona residenziale di Japigia. File caricato nel 2007; data di scatto non specificata.",
+      "historic": false,
+      "src": "/rioni/japigia.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "san-paolo",
+    "name": "San Paolo",
+    "title": "Dal CEP a un nome di comunità",
+    "intro": "Un grande progetto di edilizia pubblica ha trasformato la periferia nord-occidentale in un nuovo pezzo di città.",
+    "origin": "La denominazione San Paolo si lega alla parrocchia di San Paolo Apostolo. Le ricostruzioni storiche indicano nel 1964 l’adozione del nome per il quartiere, conosciuto anche come CEP.",
+    "history": "Il Ministero della Cultura censisce il quartiere residenziale INA-Casa progettato nel 1959 da Mario De Renzi. Le torri a pianta elicoidale sono una traccia riconoscibile di quella stagione. Nei decenni successivi case, servizi e collegamenti ferroviari ne hanno accompagnato la crescita. Anche la stazione San Gabriele, nella foto del 2008, appartiene a questa storia di connessione con Bari.",
+    "sources": [
+      [
+        "Ministero della Cultura · Quartiere CEP",
+        "https://censimentoarchitetturecontemporanee.cultura.gov.it/scheda-opera?id=114"
+      ],
+      [
+        "Amazing Bari · Approfondimento storico, 2023",
+        "https://amabari.it/wp-content/uploads/2023/11/AB15.pdf"
+      ]
+    ],
+    "note": "",
+    "photoid": "san-paolo",
+    "context": false,
+    "photo": {
+      "id": "san-paolo",
+      "title": "Metro bari.jpg",
+      "author": "Podollo",
+      "license": "Pubblico dominio",
+      "licenseurl": "https://commons.wikimedia.org/wiki/File:Metro_bari.jpg",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Metro_bari.jpg",
+      "date": "2008",
+      "caption": "Stazione San Gabriele, nel quartiere San Paolo. Foto del dicembre 2008.",
+      "historic": false,
+      "src": "/rioni/san-paolo.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "san-girolamo",
+    "name": "San Girolamo",
+    "title": "Dal piccolo luogo di culto al quartiere sul mare",
+    "intro": "Il nome conserva una memoria religiosa; il paesaggio racconta la crescita della costa a nord di Bari.",
+    "origin": "La denominazione viene generalmente ricondotta a un’antica chiesetta dedicata a San Girolamo. È una spiegazione presentata come probabile, non come etimologia definitivamente provata.",
+    "history": "L’urbanizzazione del dopoguerra cambiò una costa meno densamente costruita. Case popolari e nuovi insediamenti residenziali accompagnarono la formazione del quartiere moderno. La veduta caricata nel 2007 documenta una fase precedente alle trasformazioni più recenti del waterfront: è una testimonianza datata, non una fotografia della situazione attuale.",
+    "sources": [
+      [
+        "Marconi, San Girolamo e Fesca · Denominazioni e sviluppo",
+        "https://it.wikipedia.org/wiki/Marconi_-_San_Girolamo_-_Fesca"
+      ]
+    ],
+    "note": "",
+    "photoid": "san-girolamo",
+    "context": false,
+    "photo": {
+      "id": "san-girolamo",
+      "title": "Vista della località San Girolamo, guardando dal mare.jpg",
+      "author": "111279subingnic",
+      "license": "CC BY-SA 3.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Vista_della_localit%C3%A0_San_Girolamo%2C_guardando_dal_mare.jpg",
+      "date": "entro il 2007",
+      "caption": "San Girolamo visto dal mare. File caricato nel gennaio 2007; data di scatto non specificata.",
+      "historic": false,
+      "src": "/rioni/san-girolamo.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "fesca",
+    "name": "Fesca",
+    "title": "Un nome antico sul bordo della costa",
+    "intro": "Lame, cave e villeggiatura fanno parte della memoria di questo tratto del litorale barese.",
+    "origin": "Il toponimo è attestato in forme antiche come “Fesce”. L’associazione al greco “fascon” e ai licheni è una spiegazione tradizionale riportata dalle fonti, da considerare un’ipotesi.",
+    "history": "Nella storia di Fesca compaiono le cave di pietra, le spiagge frequentate dai baresi e la ferrovia a vapore soprannominata “ciclatera”. Il territorio è legato anche alla foce di Lama Balice. La fotografia della strada è un documento di una fase precedente del rione: non va confusa con una vista aggiornata del lungomare.",
+    "sources": [
+      [
+        "Marconi, San Girolamo e Fesca · Storia",
+        "https://it.wikipedia.org/wiki/Marconi_-_San_Girolamo_-_Fesca"
+      ],
+      [
+        "Barinedita · Il rione Fesca",
+        "https://bozza.barinedita.it/reportage/n2165-il-rione-fesca-di-bari--al-confine-misconosciuto-ma-dalla-storia-antica"
+      ]
+    ],
+    "note": "",
+    "photoid": "fesca",
+    "context": false,
+    "photo": {
+      "id": "fesca",
+      "title": "Strada San Girolamo in località Fesca.jpg",
+      "author": "111279subingnic",
+      "license": "CC BY-SA 3.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Strada_San_Girolamo_in_localit%C3%A0_Fesca.jpg",
+      "date": "non indicata",
+      "caption": "Strada San Girolamo in località Fesca, secondo il titolo del file. Data di scatto non indicata.",
+      "historic": false,
+      "src": "/rioni/fesca.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "marconi",
+    "name": "Marconi",
+    "title": "Il rione che portò Bari nell’epoca della radio",
+    "intro": "Un nome che guarda lontano: dietro Marconi c’è il legame tra Bari, il suo faro e le prime comunicazioni attraverso l’Adriatico.",
+    "origin": "Il rione porta il nome di Guglielmo Marconi. Il collegamento con questo luogo è concreto: il Comune ricorda che il 3 agosto 1904 lo scienziato realizzò dal faro di San Cataldo un collegamento radiotelegrafico con la costa del Montenegro.",
+    "history": "Il faro è un punto di riferimento della penisola di San Cataldo. Qui il racconto della navigazione incontra quello della radio: gli ambienti restaurati ospitano un percorso dedicato ai fari e alle comunicazioni. È una chiave per leggere il quartiere oltre la sua funzione residenziale, attraverso il rapporto fra città e Adriatico.",
+    "sources": [
+      [
+        "Comune di Bari · Faro, radio e Marconi",
+        "https://www.comune.bari.it/-/questo-pomeriggio-la-cerimonia-di-inaugurazione-del-museo-della-radio-e-del-museo-dei-fari-e-delle-torri-costiere-della-puglia-nel-faro-di-san-cataldo"
+      ],
+      [
+        "Contesto del nome del rione · Wikipedia",
+        "https://it.wikipedia.org/wiki/Marconi_-_San_Girolamo_-_Fesca"
+      ]
+    ],
+    "note": "La foto principale è del 1923. La Fiera del Levante è mostrata in una seconda fotografia del 1930.",
+    "photoid": "marconi",
+    "context": false,
+    "photo": {
+      "id": "marconi",
+      "title": "Bari - Faro S. Cataldo e Stazione Radiotelegrafica Marconi (1923).jpg",
+      "author": "Autore non identificato",
+      "license": "Pubblico dominio",
+      "licenseurl": "https://commons.wikimedia.org/wiki/File:Bari_-_Faro_S._Cataldo_e_Stazione_Radiotelegrafica_Marconi_%281923%29.jpg",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Bari_-_Faro_S._Cataldo_e_Stazione_Radiotelegrafica_Marconi_%281923%29.jpg",
+      "date": "1923",
+      "caption": "Il faro di San Cataldo e la stazione radiotelegrafica. Cartolina del 1923.",
+      "historic": true,
+      "src": "/rioni/marconi.jpg"
+    },
+    "gallery": [
+      {
+        "id": "marconi-fiera",
+        "title": "Fiera del Levante - 1930 - Ingresso Monumentale.jpg",
+        "author": "Anonimo / archivio Centro studi baresi",
+        "license": "Pubblico dominio",
+        "licenseurl": "https://commons.wikimedia.org/wiki/File:Fiera_del_Levante_-_1930_-_Ingresso_Monumentale.jpg",
+        "photopage": "https://commons.wikimedia.org/wiki/File:Fiera_del_Levante_-_1930_-_Ingresso_Monumentale.jpg",
+        "date": "1930",
+        "caption": "Ingresso monumentale della Fiera del Levante, 6 settembre 1930.",
+        "historic": true,
+        "src": "/rioni/marconi-fiera.jpg"
+      }
+    ]
+  },
+  {
+    "id": "stanic",
+    "name": "Stanic",
+    "title": "Quando il lavoro di fabbrica diventa un nome",
+    "intro": "Il quartiere conserva nel proprio nome una pagina della storia industriale di Bari.",
+    "origin": "Stanic riprende la denominazione della raffineria attorno alla quale si sviluppò il rione: l’attività industriale è quindi all’origine del nome urbano.",
+    "history": "La raffineria entrò in funzione nel 1937 e cessò l’attività nel 1976. L’insediamento produttivo modificò il paesaggio e favorì la crescita di nuclei abitativi per i lavoratori. La storia di Stanic è strettamente intrecciata con quella del Villaggio del Lavoratore, ma i nomi identificano parti diverse di questo territorio. La foto della stazione è un’immagine di contesto dell’area operaia, non della raffineria.",
+    "sources": [
+      [
+        "Stanic · Storia della raffineria",
+        "https://it.wikipedia.org/wiki/Stanic"
+      ],
+      [
+        "Barinedita · Origine dei nomi dei rioni",
+        "https://www.barinedita.it/bari-report-notizie/n4559-santi-lame-fabbriche-ricche-famiglie-e-antichi-popoli--all-origine-dei-nomi-dei-rioni-di-bari"
+      ]
+    ],
+    "note": "FOTO DI CONTESTO: la stazione del Villaggio del Lavoratore, legato alla storia della Stanic. Non raffigura la raffineria.",
+    "photoid": "villaggio",
+    "context": true,
+    "photo": {
+      "id": "villaggio",
+      "title": "Bari Villaggio del Lavoratore train station.01.jpg",
+      "author": "Nenea hartia",
+      "license": "CC BY-SA 4.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Bari_Villaggio_del_Lavoratore_train_station.01.jpg",
+      "date": "2024",
+      "caption": "La stazione del Villaggio del Lavoratore. Foto del 21 maggio 2024.",
+      "historic": false,
+      "src": "/rioni/villaggio.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "villaggio",
+    "name": "Villaggio del Lavoratore",
+    "title": "Le case nate intorno alla fabbrica",
+    "intro": "Un nome esplicito, che custodisce la funzione per cui nacque questo insediamento.",
+    "origin": "Il Villaggio del Lavoratore fu costruito per ospitare chi lavorava nella grande raffineria. Il nome racconta direttamente questa origine operaia.",
+    "history": "Il nucleo sorse nel 1950 e sviluppò una vita di comunità con scuole, negozi e luoghi di incontro. La chiusura della raffineria nel 1976 fu uno spartiacque per l’identità dell’area. Raccontarlo soltanto come una periferia significherebbe perdere la memoria del lavoro e delle famiglie che lo hanno abitato. La foto scelta documenta il suo collegamento ferroviario nel 2024.",
+    "sources": [
+      [
+        "Barinedita · La storia del Villaggio del Lavoratore",
+        "https://bozza.barinedita.it/reportage/n3396-da-allegra-comunita-a-rione-abbandonato-da-tutti--la-storia-del-villaggio-del-lavoratore"
+      ]
+    ],
+    "note": "",
+    "photoid": "villaggio",
+    "context": false,
+    "photo": {
+      "id": "villaggio",
+      "title": "Bari Villaggio del Lavoratore train station.01.jpg",
+      "author": "Nenea hartia",
+      "license": "CC BY-SA 4.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Bari_Villaggio_del_Lavoratore_train_station.01.jpg",
+      "date": "2024",
+      "caption": "La stazione del Villaggio del Lavoratore. Foto del 21 maggio 2024.",
+      "historic": false,
+      "src": "/rioni/villaggio.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "carbonara",
+    "name": "Carbonara",
+    "title": "Prima di essere un quartiere, un paese",
+    "intro": "Il borgo meridionale conserva la memoria di un centro autonomo e del suo territorio agricolo.",
+    "origin": "Il nome Carbonara è antico: CartApulia documenta il casale medievale di “Carbonarie”. Le spiegazioni popolari legate a carbone o incendi non vengono presentate qui come etimologie dimostrate.",
+    "history": "La documentazione medievale ne attesta l’esistenza molto prima dell’espansione contemporanea di Bari. Carbonara fu Comune autonomo dal 1806 al 1928, poi frazione e infine quartiere del capoluogo. La piazza e la chiesa di Santa Maria del Fonte aiutano a riconoscere la sua identità di borgo: una storia distinta, che l’annessione amministrativa non ha cancellato.",
+    "sources": [
+      [
+        "Regione Puglia · Carbonara in età contemporanea",
+        "https://www.cartapulia.it/esplora-la-carta/-/rcp/ricercaCartapulia_INSTANCE_1yi8w0oVRO9u/dettaglio/17457"
+      ],
+      [
+        "Regione Puglia · Bari-Carbonara",
+        "https://www.cartapulia.it/esplora-la-carta/-/rcp/ricercaCartapulia_INSTANCE_1yi8w0oVRO9u/dettaglio/29270"
+      ]
+    ],
+    "note": "",
+    "photoid": "carbonara",
+    "context": false,
+    "photo": {
+      "id": "carbonara",
+      "title": "Santa Maria del Fonte.jpg",
+      "author": "Dean305",
+      "license": "CC BY-SA 4.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Santa_Maria_del_Fonte.jpg",
+      "date": "2023",
+      "caption": "Piazza e chiesa di Santa Maria del Fonte a Carbonara. Foto del 21 settembre 2023.",
+      "historic": false,
+      "src": "/rioni/carbonara.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "ceglie",
+    "name": "Ceglie del Campo",
+    "title": "Ceglie del Campo: una storia più antica della città moderna",
+    "intro": "Prima di essere un quartiere, Ceglie aveva già una lunga storia. Nel suo nome si incontrano paesaggio, memoria antica e identità locale.",
+    "origin": "La scheda storica del Comune collega, come ipotesi, l’antico nome Caeliae ai rilievi e alle cavità del territorio. La specificazione “del Campo” fu aggiunta nell’Ottocento per distinguerla da Ceglie Messapico. Sono due livelli diversi del nome: una radice antica e una precisazione successiva.",
+    "history": "L’abitato ha origini antiche, legate alla popolazione japigia, e un sottosuolo ricco di cavità. La storia locale passa attraverso insediamenti religiosi, famiglie feudali e collegamenti con i paesi vicini. Ceglie rimase Comune autonomo fino al 1928, quando fu aggregata a Bari. La chiesa di Santa Maria del Campo è uno dei luoghi che ne custodiscono la memoria.",
+    "sources": [
+      [
+        "Comune di Bari · Storia di Ceglie del Campo",
+        "https://www.comune.bari.it/-/ceglie-del-campo"
+      ]
+    ],
+    "note": "L’etimologia di Caeliae è proposta dalla fonte comunale: va letta come interpretazione, non come certezza linguistica.",
+    "photoid": "ceglie",
+    "context": false,
+    "photo": {
+      "id": "ceglie",
+      "title": "Bari - Chiesa di Santa Maria del Campo (facciata).jpeg",
+      "author": "Vinphoto",
+      "license": "CC BY-SA 4.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Bari_-_Chiesa_di_Santa_Maria_del_Campo_%28facciata%29.jpeg",
+      "date": "2023",
+      "caption": "Chiesa di Santa Maria del Campo, Ceglie. Foto del 15 settembre 2023.",
+      "historic": false,
+      "src": "/rioni/ceglie.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "loseto",
+    "name": "Loseto",
+    "title": "Loseto: il borgo, il castello e un nome da raccontare",
+    "intro": "Un borgo raccolto, una porta monumentale e il castello: Loseto conserva un’identità che precede la sua appartenenza a Bari.",
+    "origin": "Una tradizione riportata dal Comune racconta che il nome deriverebbe dall’espressione “quello sito”, poi trasformata in Lusito. Il racconto è collegato a Ottone II e a un gruppo di cavalieri: è una leggenda sull’origine del nome, non un’etimologia storicamente accertata.",
+    "history": "Le origini precise restano incerte, ma documenti medievali attestano l’esistenza del luogo. CartApulia segnala Loseto tra le località della Terra di Bari citate nei registri angioini del 1269. Il borgo, la chiesa di San Giorgio e il castello raccontano la sua storia. Comune autonomo fino al 1937, Loseto fu poi aggregata a Bari.",
+    "sources": [
+      [
+        "Comune di Bari · Loseto e la tradizione del nome",
+        "https://www.comune.bari.it/-/loseto"
+      ],
+      [
+        "Regione Puglia · CartApulia, Bari-Loseto",
+        "https://www.cartapulia.it/esplora-la-carta/-/rcp/ricercaCartapulia_INSTANCE_1yi8w0oVRO9u/dettaglio/29225"
+      ],
+      [
+        "Ministero della Cultura · Storia amministrativa di Bari",
+        "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=35952&RicLin=en&RicSez=prodenti&RicTipoScheda=pe&RicVM=indice&TipoPag=prodente"
+      ]
+    ],
+    "note": "La leggenda del nome e le attestazioni medievali sono presentate separatamente.",
+    "photoid": "loseto",
+    "context": false,
+    "photo": {
+      "id": "loseto",
+      "title": "Castello di Bari Loseto.jpg",
+      "author": "Francesco Falconetti",
+      "license": "CC BY-SA 4.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Castello_di_Bari_Loseto.jpg",
+      "date": "2019",
+      "caption": "Castello di Loseto. Foto del 28 gennaio 2019.",
+      "historic": false,
+      "src": "/rioni/loseto.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "palese",
+    "name": "Palese",
+    "title": "Tra campagne, ville e mare",
+    "intro": "Palese non è nata come un semplice prolungamento del centro di Bari: la sua vicenda passa da Modugno e dal paesaggio rurale.",
+    "origin": "Sull’origine di “Palese” circolano spiegazioni diverse. Le fonti consultate non consentono di scegliere un’etimologia certa: è più corretto distinguere questa incertezza dai passaggi amministrativi documentati.",
+    "history": "Palese era una frazione di Modugno prima dell’aggregazione a Bari del 1928. Il suo territorio comprende la memoria di Macchie e di una vocazione agricola, oltre al rapporto con la costa. Il corso Vittorio Emanuele mostra un volto di questa storia, precedente alla più recente espansione edilizia. L’identità locale conserva quindi radici diverse da quelle dei quartieri nati intorno al centro urbano.",
+    "sources": [
+      [
+        "Palese Macchie · Storia",
+        "https://it.wikipedia.org/wiki/Palese_Macchie"
+      ],
+      [
+        "Ministero della Cultura · Storia amministrativa di Bari",
+        "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=35952&TipoPag=prodente"
+      ]
+    ],
+    "note": "Etimologia non risolta: nessuna spiegazione viene presentata come un fatto certo.",
+    "photoid": "palese",
+    "context": false,
+    "photo": {
+      "id": "palese",
+      "title": "Corso Vittorio Emanuele a Palese.jpeg",
+      "author": "Fidia 82",
+      "license": "Pubblico dominio",
+      "licenseurl": "https://commons.wikimedia.org/wiki/File:Corso_Vittorio_Emanuele_a_Palese.jpeg",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Corso_Vittorio_Emanuele_a_Palese.jpeg",
+      "date": "entro il 2013",
+      "caption": "Corso Vittorio Emanuele a Palese, presso via Gino Priolo. File caricato nel 2013.",
+      "historic": false,
+      "src": "/rioni/palese.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "santo-spirito",
+    "name": "Santo Spirito",
+    "title": "Il borgo che era la marina di Bitonto",
+    "intro": "Il porto, le case e le ville raccontano una storia costiera con un’identità ben riconoscibile.",
+    "origin": "Il nome è attestato nella forma medievale “locus Sancti Spiriti”, riportata in un contratto agrario del 1261. Il riferimento religioso è parte della memoria storica del luogo.",
+    "history": "Per secoli Santo Spirito fu la marina di Bitonto. Il rapporto con il porto e la costruzione di residenze estive contribuirono al suo sviluppo. Nel 1928 fu aggregato a Bari e nel 1970 divenne quartiere. Le vicende dei confini con Bari e Giovinazzo sono ricordate anche dai “titoli”, antichi segnali lapidei del territorio.",
+    "sources": [
+      [
+        "Santo Spirito · Storia e attestazioni",
+        "https://it.wikipedia.org/wiki/Santo_Spirito_(Bari)"
+      ],
+      [
+        "Comune di Bari · Quadro storico territoriale",
+        "https://trasparenza.comune.bari.it/comunebari/archivio/220071-pianificazione-e-governo-del-territorio/doc/1183"
+      ]
+    ],
+    "note": "",
+    "photoid": "santo-spirito",
+    "context": false,
+    "photo": {
+      "id": "santo-spirito",
+      "title": "Bari - Santo Spirito.jpg",
+      "author": "Fidia 82",
+      "license": "Pubblico dominio",
+      "licenseurl": "https://commons.wikimedia.org/wiki/File:Bari_-_Santo_Spirito.jpg",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Bari_-_Santo_Spirito.jpg",
+      "date": "2011",
+      "caption": "Lungomare e porto di Santo Spirito. Foto del 17 marzo 2011.",
+      "historic": false,
+      "src": "/rioni/santo-spirito.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "san-pio",
+    "name": "San Pio",
+    "title": "Da Enziteto a San Pio: il nome e la comunità",
+    "intro": "Una parte della Bari contemporanea da raccontare attraverso le persone e i luoghi, senza ridurla alla cronaca.",
+    "origin": "San Pio è il nome adottato per il rione prima conosciuto come Enziteto. La denominazione richiama Padre Pio; non viene indicata una data del cambio di nome senza il relativo atto verificato.",
+    "history": "Il quartiere si sviluppò negli anni Ottanta con l’edilizia residenziale pubblica. La parrocchia della Natività e le iniziative di comunità fanno parte della sua storia sociale. Una lettura del rione comprende sia le difficoltà sia le esperienze educative e di solidarietà. La fotografia istituzionale scelta documenta la riapertura del consultorio nel gennaio 2025.",
+    "sources": [
+      [
+        "Arcidiocesi · Storia della parrocchia e nome del quartiere",
+        "https://www.arcidiocesibaribitonto.it/luoghi-di-culto/nativita-di-nostro-signore/storia"
+      ],
+      [
+        "Arcidiocesi Bari-Bitonto · Enziteto e la comunità",
+        "https://www.arcidiocesibaribitonto.it/pubblicazioni/articoli-on-line/enziteto-periferia-di-bari-dove-la-missione-e-al-100"
+      ],
+      [
+        "Comune di Bari · Consultorio di San Pio",
+        "https://www.comune.bari.it/-/a-san-pio-riapre-il-consultorio-familiare-questa-mattina-il-sindaco-al-taglio-del-nastro"
+      ]
+    ],
+    "note": "La foto documenta un evento pubblico del 2025: non è una foto d’epoca.",
+    "photoid": "san-pio",
+    "context": false,
+    "photo": {
+      "id": "san-pio",
+      "title": "Riapertura del consultorio familiare a San Pio",
+      "author": "Comune di Bari / Redazione Portale Istituzionale",
+      "license": "CC BY 4.0",
+      "licenseurl": "https://creativecommons.org/licenses/by/4.0/",
+      "photopage": "https://www.comune.bari.it/-/a-san-pio-riapre-il-consultorio-familiare-questa-mattina-il-sindaco-al-taglio-del-nastro",
+      "date": "2025",
+      "caption": "Riapertura del consultorio in piazzetta Eleonora, a San Pio. Evento del 21 gennaio 2025.",
+      "historic": false,
+      "rightsnote": "Riuso secondo la licenza generale CC BY 4.0 del portale comunale, in assenza di crediti o restrizioni specifiche nella pagina. Note legali: https://www.comune.bari.it/note-legali",
+      "src": "/rioni/san-pio.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "catino",
+    "name": "Catino",
+    "title": "Un nome che racconta la forma del terreno",
+    "intro": "Nell’entroterra di Santo Spirito, anche il paesaggio aiuta a capire la storia del nome.",
+    "origin": "Catino viene ricondotto alla conformazione bassa e concava del terreno, dove convergono le acque dall’interno. È un’interpretazione toponomastica riportata dalle ricostruzioni territoriali.",
+    "history": "La crescita residenziale contemporanea ha inserito questo nucleo nel sistema urbano della costa nord di Bari, insieme a Santo Spirito e San Pio. La storia non è fatta solo di edifici: scuole, parrocchie e spazi pubblici ne costruiscono la vita di comunità. Il giardino Peppino Impastato, completato nel 2025, è un esempio di questa dimensione collettiva.",
+    "sources": [
+      [
+        "Santo Spirito e Catino · Geografia del nome",
+        "https://it.wikipedia.org/wiki/Santo_Spirito_(Bari)"
+      ],
+      [
+        "Comune di Bari · Giardino Peppino Impastato, 2025",
+        "https://www.comune.bari.it/-/33%C2%B0-anniversario-della-strage-di-capaci-oggi-la-cerimonia-di-inaugurazione-del-giardino-peppino-impastato-a-catino-con-il-completamento-della-nuova-area-attrezzata"
+      ]
+    ],
+    "note": "FOTO DI CONTESTO: il porto di Santo Spirito nel 2011, appartenente allo stesso ambito territoriale. Non è una veduta di Catino. Una foto specifica con riuso chiaro resta da reperire.",
+    "photoid": "santo-spirito",
+    "context": true,
+    "photo": {
+      "id": "santo-spirito",
+      "title": "Bari - Santo Spirito.jpg",
+      "author": "Fidia 82",
+      "license": "Pubblico dominio",
+      "licenseurl": "https://commons.wikimedia.org/wiki/File:Bari_-_Santo_Spirito.jpg",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Bari_-_Santo_Spirito.jpg",
+      "date": "2011",
+      "caption": "Lungomare e porto di Santo Spirito. Foto del 17 marzo 2011.",
+      "historic": false,
+      "src": "/rioni/santo-spirito.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "torre-a-mare",
+    "name": "Torre a Mare",
+    "title": "La torre che ha dato il nome al borgo",
+    "intro": "Una torre di avvistamento e un piccolo approdo spiegano il legame fra nome, difesa e vita sul mare.",
+    "origin": "Il nome richiama la torre costiera nota come Torre Pelosa. Le forme storiche Torre Apellosa e Torre Lapillosa precedono quella diventata più comune; Torre a Mare è la denominazione successiva della località.",
+    "history": "La torre cinquecentesca serviva a sorvegliare la costa dalle incursioni. Attorno ad essa si sviluppò un borgo di pescatori, legato all’approdo presso la foce di lama Giotta. Nel 1934 l’area fu aggregata a Bari da territori di Noicattaro e Triggiano. Ancora oggi la torre rende leggibile la radice marittima del luogo.",
+    "sources": [
+      [
+        "Ministero della Cultura · Torre Pelosa",
+        "https://cultura.gov.it/luogo/torre-pelosa"
+      ],
+      [
+        "Ministero della Cultura · Storia amministrativa di Bari",
+        "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=35952&TipoPag=prodente"
+      ]
+    ],
+    "note": "",
+    "photoid": "torre-a-mare",
+    "context": false,
+    "photo": {
+      "id": "torre-a-mare",
+      "title": "Torre a mare torre 01.jpg",
+      "author": "Francesco Falconetti",
+      "license": "CC BY-SA 4.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Torre_a_mare_torre_01.jpg",
+      "date": "2022",
+      "caption": "Torre Pelosa, a Torre a Mare. Foto del 17 aprile 2022.",
+      "historic": false,
+      "src": "/rioni/torre-a-mare.jpg"
+    },
+    "gallery": []
+  },
+  {
+    "id": "santanna",
+    "name": "Sant’Anna",
+    "title": "Il quartiere nuovo e la cappella più antica",
+    "intro": "Fra nuovi edifici e memoria rurale, il nome lega l’espansione recente a un luogo di culto precedente.",
+    "origin": "Il rione prende il nome dalla cappella rurale dedicata a Sant’Anna. La presenza di questa cappella è richiamata anche nella storia della nuova parrocchia.",
+    "history": "La zona residenziale si è sviluppata soprattutto a partire dal 2010 fra statale e ferrovia. La crescita urbana ha portato nuove famiglie e nuove necessità di servizi. La storia della parrocchia ricorda il percorso avviato nel 2012 e il terreno concesso dal Comune nel 2018. La fotografia caricata nel 2014 documenta una fase iniziale dello sviluppo del rione.",
+    "sources": [
+      [
+        "Arcidiocesi Bari-Bitonto · Storia della parrocchia Sant’Anna",
+        "https://www.arcidiocesibaribitonto.it/luoghi-di-culto/s-anna/storia"
+      ],
+      [
+        "Barinedita · Il nuovo quartiere, 2018",
+        "https://www.barinedita.it/reportage/n3394-bari-sant-anna--il-quartiere-giovane-abitato-da-giovani-che-vive-di-speranza"
+      ]
+    ],
+    "note": "Non è la chiesa di Sant’Anna nel centro storico: luogo e quartiere sono distinti.",
+    "photoid": "santanna",
+    "context": false,
+    "photo": {
+      "id": "santanna",
+      "title": "Quartiere Sant'Anna, Bari.jpg",
+      "author": "Fabio Cianciola / Fbio87",
+      "license": "CC BY-SA 4.0",
+      "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photopage": "https://commons.wikimedia.org/wiki/File:Quartiere_Sant%27Anna%2C_Bari.jpg",
+      "date": "entro il 2014",
+      "caption": "Il quartiere Sant’Anna. File caricato nel novembre 2014; data di scatto non specificata.",
+      "historic": false,
+      "src": "/rioni/santanna.jpg"
+    },
+    "gallery": []
+  }
+]

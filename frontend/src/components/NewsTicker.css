@@ -1,0 +1,22 @@
+.news-ticker{display:flex;align-items:center;background:#0b2545;color:#f8f5ee;height:48px;overflow:hidden;font-size:12px;border-radius:14px;margin:4px 8px}
+.news-ticker-label{flex:0 0 208px;width:208px;height:40px;display:flex;align-items:center;justify-content:center;box-sizing:border-box;border-radius:12px;margin:4px;background:#d9531e;color:white;padding:0 12px;white-space:nowrap;font-weight:800;letter-spacing:.08em;position:relative;z-index:1}
+.news-ticker-window{flex:1;min-width:0;overflow:hidden}
+.news-ticker-track{display:flex;width:max-content;animation:barizone-news-scroll var(--ticker-duration,45s) linear infinite}
+.news-ticker-group{display:flex;align-items:center;flex:none;padding-right:32px;gap:32px}
+.news-ticker-item{display:inline-flex;align-items:center;gap:12px;white-space:nowrap;text-decoration:none;color:#f8f5ee;padding:10px 0}
+.news-ticker-item:hover{text-decoration:underline}
+.news-ticker-category{color:#efb94f;text-transform:uppercase;font-size:10px;letter-spacing:.05em}
+.news-ticker-dot{color:#d9531e;font-size:7px;margin-left:16px}
+.news-ticker-control{flex:none;padding:8px 13px;min-width:42px;border-left:1px solid #ffffff30;background:#0b2545;color:white}
+.news-ticker-empty{margin:0;padding:9px 14px;font-size:12px}
+.news-ticker:hover .news-ticker-track,.news-ticker:focus-within .news-ticker-track,.news-ticker-track.is-paused{animation-play-state:paused}
+.news-ticker a:focus-visible,.news-ticker button:focus-visible{outline:2px solid #efb94f;outline-offset:-2px}
+@keyframes barizone-news-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.news-ticker-track{animation:none}.news-ticker-window{overflow-x:auto}.news-ticker-group[aria-hidden=true],.news-ticker-control{display:none}}
+@media(max-width:600px){.news-ticker-label{flex-basis:164px;width:164px;padding:0 8px;font-size:10px}.news-ticker-category{display:none}}
+
+/* Viabilità Bari usa esattamente i colori della barra Meteo Bari. */
+.traffic-ticker{background:#0b2545;color:#f8f5ee;border:0}
+.traffic-ticker-label{background:#d9531e;color:white;white-space:nowrap}
+.traffic-ticker .news-ticker-control{background:#0b2545;color:white}
+.traffic-ticker .news-ticker-item{color:#f8f5ee}

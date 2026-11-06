@@ -1,0 +1,106 @@
+# Barizone · configurazione di base.
+# Ogni valore sensibile o dipendente dall'hosting arriva da variabili d'ambiente:
+# lo stesso artefatto gira su VPS, PaaS o Kubernetes senza modifiche.
+spring:
+  application:
+    name: barizone
+  threads:
+    virtual:
+      enabled: true
+  autoconfigure:
+    # Nessun utente Spring predefinito: l'accesso admin è gestito da AdminAuthService.
+    exclude: org.springframework.boot.security.autoconfigure.UserDetailsServiceAutoConfiguration
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/barizone}
+    username: ${DATABASE_USERNAME:barizone}
+    password: ${DATABASE_PASSWORD:barizone}
+    hikari:
+      maximum-pool-size: ${DATABASE_POOL_SIZE:10}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc.time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    default-property-inclusion: always
+  servlet:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 1100KB
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=500,expireAfterWrite=300s
+
+server:
+  port: ${PORT:8080}
+  forward-headers-strategy: framework
+  compression:
+    enabled: true
+    mime-types: application/json,text/html,text/css,application/javascript,image/svg+xml,application/xml
+  error:
+    whitelabel:
+      enabled: false
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+
+springdoc:
+  api-docs:
+    path: /api/admin/openapi
+  swagger-ui:
+    path: /api/admin/docs
+
+barizone:
+  # Origin pubblico del sito, usato per sitemap, link nelle email e controllo CSRF.
+  public-origin: ${PUBLIC_ORIGIN:https://barizone.it}
+  # Origin aggiuntivi accettati per richieste di modifica (es. dominio di staging). Separati da virgola.
+  allowed-origins: ${ALLOWED_ORIGINS:}
+  contact-email: ${CONTACT_EMAIL:info@barizone.it}
+  admin:
+    # Accesso di riserva con sola password (compatibile con la versione Worker). Vuoto = disattivato.
+    password: ${ADMIN_PASSWORD:}
+    email: ${ADMIN_EMAIL:}
+    session-secret: ${SESSION_SECRET:}
+    session-hours: 12
+    max-login-attempts: 10
+    login-window-minutes: 15
+  email:
+    enabled: ${NEWS_EMAIL_ENABLED:false}
+    resend-api-key: ${RESEND_API_KEY:}
+    resend-base-url: ${RESEND_BASE_URL:https://api.resend.com}
+    from: ${EMAIL_FROM:Barizone <info@barizone.it>}
+  push:
+    subject: ${VAPID_SUBJECT:mailto:info@barizone.it}
+    # Chiavi VAPID facoltative da variabili d'ambiente. Se assenti vengono lette dal database
+    # (migrate dalla versione D1) oppure generate al primo avvio.
+    public-key: ${VAPID_PUBLIC_KEY:}
+    private-key: ${VAPID_PRIVATE_KEY:}
+    campaign-batch-size: 25
+    group-batch-size: 5
+    dispatch-interval-ms: 30000
+  media:
+    # db = foto salvate in PostgreSQL (compatibile con la versione D1).
+    storage: ${MEDIA_STORAGE:db}
+  weather:
+    url: https://api.open-meteo.com/v1/forecast?latitude=41.1171&longitude=16.8719&current=temperature_2m,precipitation,weather_code,wind_speed_10m,wind_direction_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max&forecast_days=7&timezone=Europe%2FRome
+
+logging:
+  level:
+    root: INFO
+    it.barizone: INFO

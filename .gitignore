@@ -1,0 +1,10 @@
+target/
+frontend/node_modules/
+frontend/build/
+.env
+*.log
+.idea/
+.vscode/
+*.iml
+d1-dump.sql
+import.sql

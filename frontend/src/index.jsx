@@ -1,0 +1,29 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "@/index.css";
+import App from "@/App";
+import "./previewApi";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60_000,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
+  </React.StrictMode>,
+);
+
+// Service worker (notifiche + lettura offline): solo in produzione e su HTTPS.
+if (import.meta.env.PROD && 'serviceWorker' in navigator && window.location.protocol === 'https:') {
+  window.addEventListener('load', () => { navigator.serviceWorker.register('/push-sw.js').catch(() => {}); });
+}

@@ -1,0 +1,27 @@
+/* Barra di navigazione inferiore: solo su schermi stretti. */
+.mobile-tabbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:repeat(5,1fr);
+  background:#FAF8F5;
+  border-top:1px solid #e5dfd3;padding-bottom:env(safe-area-inset-bottom)}
+.mobile-tabbar a,.mobile-tabbar button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  min-height:56px;padding:6px 2px;color:#4b5563;font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;
+  background:none;border:0;text-decoration:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.mobile-tabbar .is-active{color:#d9531e}
+.mobile-tabbar a:focus-visible,.mobile-tabbar button:focus-visible{outline:2px solid #0b2545;outline-offset:-4px;border-radius:12px}
+
+/* Pannello "Altro" che sale dal basso */
+.mobile-sheet-backdrop{position:fixed;inset:0;z-index:58;background:rgba(11,37,69,.45)}
+.mobile-sheet{position:fixed;left:0;right:0;bottom:calc(56px + env(safe-area-inset-bottom));z-index:59;
+  max-height:calc(100dvh - 140px);overflow-y:auto;background:#fff;border-radius:20px 20px 0 0;
+  box-shadow:0 -12px 32px rgba(11,37,69,.18);padding:8px 16px 16px;transform:translateY(0)}
+.mobile-sheet[hidden]{display:none}
+.mobile-sheet-handle{width:40px;height:4px;border-radius:2px;background:#e5dfd3;margin:4px auto 8px}
+.mobile-sheet ul{list-style:none;margin:0;padding:0}
+.mobile-sheet li a,.mobile-sheet li button{display:flex;align-items:center;gap:10px;width:100%;min-height:52px;padding:0 8px;
+  border-bottom:1px solid #f1ece2;color:#0b2545;font-family:'Outfit',sans-serif;font-size:17px;font-weight:600;
+  text-decoration:none;background:none;border-left:0;border-right:0;border-top:0;text-align:left}
+.mobile-sheet li a[aria-current=page]{color:#d9531e}
+.mobile-sheet-mail{display:flex;align-items:center;min-height:48px;padding:0 8px;margin-top:8px;color:#0b2545;font-size:15px;text-decoration:underline}
+@media (prefers-reduced-motion:no-preference){.mobile-sheet.is-open{animation:sheet-up .2s ease-out}}
+@keyframes sheet-up{from{transform:translateY(24px);opacity:.6}to{transform:translateY(0);opacity:1}}
+
+@media (min-width:768px){.mobile-tabbar,.mobile-sheet,.mobile-sheet-backdrop{display:none!important}}

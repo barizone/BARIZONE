@@ -1,0 +1,36 @@
+# Sviluppo locale: PostgreSQL + applicazione.
+#   docker compose up --build        → http://localhost:8080
+# In produzione usa docker-compose.prod.yml (HTTPS automatico con Caddy).
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: barizone
+      POSTGRES_USER: barizone
+      POSTGRES_PASSWORD: barizone
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U barizone"]
+      interval: 5s
+      retries: 10
+
+  app:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: jdbc:postgresql://db:5432/barizone
+      DATABASE_USERNAME: barizone
+      DATABASE_PASSWORD: barizone
+      PUBLIC_ORIGIN: http://localhost:8080
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      SESSION_SECRET: ${SESSION_SECRET:-}
+    ports:
+      - "8080:8080"
+
+volumes:
+  db-data:

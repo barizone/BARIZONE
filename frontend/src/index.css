@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@config "../tailwind.config.js";
+
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #FAF8F5;
+    color: #111827;
+}
+
+.font-serif-display { font-family: 'Playfair Display', serif; }
+.font-ui { font-family: 'Outfit', sans-serif; }
+.font-body { font-family: 'Plus Jakarta Sans', sans-serif; }
+.font-mono-accent { font-family: 'JetBrains Mono', monospace; }
+
+@layer base {
+    :root {
+        --background: 40 33% 97%;
+        --foreground: 220 33% 10%;
+        --card: 0 0% 100%;
+        --card-foreground: 220 33% 10%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 220 33% 10%;
+        --primary: 215 76% 15%;
+        --primary-foreground: 40 33% 97%;
+        --secondary: 40 20% 92%;
+        --secondary-foreground: 220 33% 10%;
+        --muted: 40 20% 92%;
+        --muted-foreground: 220 15% 35%;
+        --accent: 17 74% 48%;
+        --accent-foreground: 40 33% 97%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 40 33% 97%;
+        --border: 38 25% 85%;
+        --input: 38 25% 85%;
+        --ring: 215 76% 15%;
+        --radius: 0.375rem;
+    }
+}
+
+@layer base {
+    * { @apply border-border; }
+    body { @apply bg-background text-foreground; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+}
+
+/* Editorial ticker animation */
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.ticker-track { animation: ticker 45s linear infinite; }
+
+/* Grain overlay */
+.grain::before {
+    content: '';
+    position: absolute; inset: 0; pointer-events: none;
+    opacity: 0.06; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.pattern-lines {
+    background-image: repeating-linear-gradient(45deg, rgba(11,37,69,0.03) 0, rgba(11,37,69,0.03) 1px, transparent 0, transparent 12px);
+}
+
+/* Hover underline */
+.link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.3s;
+}
+.link-underline:hover { background-size: 100% 1px; }
+
+/* Marker highlight */
+.marker-highlight {
+    background: linear-gradient(180deg, transparent 55%, rgba(217, 83, 30, 0.28) 55%);
+    padding: 0 0.15em;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #F8F5EE; }
+::-webkit-scrollbar-thumb { background: #0B2545; border-radius: 6px; }
+
+/* Editorial rule */
+.editorial-rule {
+    height: 1px;
+    background: linear-gradient(90deg, #0B2545, transparent);
+}
+
+
+.news-flow { columns: 3 280px; column-gap: 1.5rem; }
+.news-flow > * { display: inline-block; width: 100%; break-inside: avoid; margin-bottom: 1.5rem; vertical-align: top; }
+
+
+/* Header logo: increase actual visible size without clipping it. */
+.barizone-header-image {
+  display:block; width:clamp(215px, 24vw, 330px);
+  height:116px; object-fit:contain; object-position:left center;
+}
+.news-carousel { min-width:0; }
+.news-carousel-control { min-width:44px; min-height:44px; padding:8px 12px; border:1px solid #E5DFD3; border-radius:8px; background:white; color:#0B2545; font-weight:600; }
+.news-carousel-control:hover { border-color:#D9531E; }
+.news-carousel-control:focus-visible { outline:2px solid #D9531E; outline-offset:3px; }
+@media (max-width:639px) { .barizone-header-image { width:clamp(168px,52vw,235px); height:82px; } }
+@media (max-width:359px) { .barizone-header-image { width:155px; height:70px; } }
+@media (min-width:1280px) { .barizone-header-image { width:330px; height:116px; } }
+
+/* Independent original radio mark beside Barizone in the masthead. */
+.header-brand-group { display:flex; align-items:center; gap:clamp(6px,1.2vw,16px); min-width:0; flex-shrink:1; }
+.header-radio-mark { flex:0 0 auto; display:flex; align-items:center; justify-content:center; }
+.header-radio-image { display:block; width:clamp(90px,9vw,120px); height:70px; }
+.header-radio-image img { object-fit:contain !important; width:100%; height:100%; }
+@media (max-width:639px) {
+ .header-brand-group { gap:5px; }
+ .header-radio-image { width:76px; height:52px; }
+ .barizone-header-image { width:clamp(148px,43vw,205px); }
+}
+@media (max-width:359px) {
+ .header-radio-image { width:64px; height:44px; }
+ .barizone-header-image { width:140px; }
+}
+
+/* Homepage: full-width, content-led sections without the former radio column. */
+.home-discovery { display:flex; flex-direction:column; gap:10px; }
+.home-discovery > section, .home-discovery-side { width:100%; min-width:0; }
+.home-discovery-side { display:flex; flex-direction:column; gap:10px; }
+.home-discovery-side > section:empty { display:none; }
+.home-discovery-side .home-spotlight img { max-height:340px; object-fit:contain; }
+@media (max-width:639px) {
+  .home-discovery { gap:8px; }
+  .home-discovery-side { gap:8px; }
+}
+/* Radio Sound City Network: only the original clickable mark in the header. */
+.header-radio-mark { flex-direction:column; gap:1px; text-decoration:none; color:#0B2545; }
+.header-radio-caption { display:block; font-size:11px; line-height:1.1; font-weight:800; text-align:center; color:#B74417; white-space:nowrap; }
+.header-radio-mark:hover .header-radio-caption, .header-radio-mark:focus-visible .header-radio-caption { text-decoration:underline; }
+.header-radio-mark:focus-visible { outline:2px solid #D9531E; outline-offset:3px; border-radius:8px; }
+.header-radio-image { width:clamp(100px,10vw,148px); height:auto; aspect-ratio:720/393; }
+@media (max-width:767px) {
+  .header-radio-image { width:clamp(76px,20vw,108px); height:auto; }
+  .header-radio-caption { font-size:10px; }
+}
+@media (max-width:359px) {
+  .header-radio-image { width:68px; }
+}
+
+
+/* Masthead refinements: both brand marks visible, no surplus blank area. */
+.header-brand-group { flex-wrap:nowrap; max-width:100%; }
+.header-brand-group > a { min-width:0; }
+.header-radio-mark { min-width:0; padding:2px 4px; }
+.header-radio-image { width:clamp(108px,11vw,156px); min-width:0; aspect-ratio:280/153; height:auto; }
+.header-radio-image img { display:block; width:100%; height:100%; object-fit:contain; }
+.header-radio-caption { margin-top:2px; font-weight:800; }
+@media (max-width:767px) {
+ .header-brand-group { gap:4px; }
+ .header-radio-image { width:clamp(78px,23vw,112px); }
+ .header-radio-mark { padding:1px; }
+ .barizone-header-image { height:72px; }
+}
+@media (max-width:359px) {
+ .header-radio-image { width:70px; }
+ .barizone-header-image { width:137px; height:65px; }
+}
