@@ -12,17 +12,21 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 /** Le API riservate rispondono 403 JSON (come la versione Worker), mai con una pagina di login. */
 public class RestAccessHandlers implements AuthenticationEntryPoint, AccessDeniedHandler {
 
-    private static final String DETAIL = "Accesso riservato all’amministratore.";
+    private static String detail(HttpServletRequest request) {
+        return request.getRequestURI().startsWith("/api/account/")
+                ? "Accedi con l’account dell’attività per usare questa funzione."
+                : "Accesso riservato all’amministratore.";
+    }
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException e)
             throws IOException {
-        JsonErrors.write(response, HttpServletResponse.SC_FORBIDDEN, DETAIL);
+        JsonErrors.write(response, HttpServletResponse.SC_FORBIDDEN, detail(request));
     }
 
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException e)
             throws IOException {
-        JsonErrors.write(response, HttpServletResponse.SC_FORBIDDEN, DETAIL);
+        JsonErrors.write(response, HttpServletResponse.SC_FORBIDDEN, detail(request));
     }
 }

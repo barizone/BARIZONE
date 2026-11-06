@@ -64,6 +64,7 @@ public class MerchantService {
         CompanyProfile profile = new CompanyProfile();
         profile.setId(UUID.randomUUID().toString());
         apply(profile, request);
+        requireUniqueVat(profile);
         profile.setStatus(CompanyStatus.draft);
         profile.setUpdatedAt(Instant.now());
         repository.save(profile);
@@ -76,10 +77,19 @@ public class MerchantService {
         CompanyProfile profile = repository.findById(id).orElseThrow(() -> ApiException.notFound("Azienda non trovata."));
         boolean wasPublished = profile.isPublished();
         apply(profile, request);
+        requireUniqueVat(profile);
         profile.setStatus(wasPublished && publicationIssues(profile).isEmpty() ? CompanyStatus.published : CompanyStatus.draft);
         profile.setUpdatedAt(Instant.now());
         repository.save(profile);
         return MerchantResponse.of(profile, publicationIssues(profile));
+    }
+
+    /** Una partita IVA può comparire in una sola scheda (le registrazioni rifiutate non contano). */
+    private void requireUniqueVat(CompanyProfile profile) {
+        if (!profile.getVatNumber().isEmpty() && repository.existsByVatNumberAndIdNotAndRegistrationStatusNot(
+                profile.getVatNumber(), profile.getId(), it.barizone.model.enums.RegistrationStatus.rejected)) {
+            throw ApiException.conflict("Esiste già un’azienda con questa partita IVA.");
+        }
     }
 
     @Transactional
@@ -130,6 +140,9 @@ public class MerchantService {
         String vat = Texts.clean(r.vatNumber());
         if (!vat.isEmpty() && !vat.matches("^\\d{11}$")) {
             throw ApiException.badRequest("La partita IVA deve contenere 11 cifre.");
+        }
+        if (!vat.isEmpty() && !it.barizone.util.ItalianTaxIds.isValidVat(vat)) {
+            throw ApiException.badRequest("La partita IVA non è valida: controlla le cifre.");
         }
         String email = Texts.clean(r.email());
         if (!email.isEmpty() && !Texts.EMAIL.matcher(email).matches()) {
@@ -186,7 +199,6 @@ public class MerchantService {
         p.setMapsUrl(maps);
         p.setEntityType(Texts.clean(r.entityType()));
         p.setPhotos(photos);
-        p.setDemo(Boolean.TRUE.equals(r.isDemo()));
         p.setVerified(Boolean.TRUE.equals(r.verified()));
         p.setContractActive(Boolean.TRUE.equals(r.contractActive()));
         p.setNotificationsEnabled(false);

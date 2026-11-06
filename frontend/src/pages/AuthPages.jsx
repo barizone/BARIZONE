@@ -21,7 +21,7 @@ export function LoginPage(){
    <label className="block font-ui text-sm text-[#0B2545]">Password amministratore<input name="password" type="password" autoComplete="current-password" required maxLength={1024} value={password} onChange={event=>setPassword(event.target.value)} className="block w-full mt-1 px-3 py-3 border border-[#E5DFD3] rounded font-body text-base"/></label>
    {error&&<p role="alert" className="text-red-700 text-sm">{error}</p>}
    <button disabled={busy} className="w-full bg-[#0B2545] text-white rounded py-3 font-ui font-semibold disabled:opacity-50">{busy?'Accesso…':'Accedi'}</button>
-  </form><p className="text-sm mt-4">Accesso riservato a Leonardo Favia. Gli esercenti usano il collegamento personale fornito da Barizone.</p>
+  </form><p className="text-sm mt-4">Area riservata alla redazione. Sei un utente o un’attività? <Link to="/accedi" className="underline">Accedi qui</Link>.</p>
  </AuthShell>;
 }
 function AuthShell({title,subtitle,children}){return <div className="px-4 py-6 sm:py-8"><div className="max-w-md mx-auto"><Link to="/" className="flex justify-center mb-6"><img src="/logo-224.webp" alt="Barizone" className="h-20 w-20 object-contain"/></Link><div className="bg-white border border-[#E5DFD3] rounded-md p-6 sm:p-8"><h1 className="font-serif-display text-3xl font-black text-[#0B2545]">{title}</h1><p className="mt-2 mb-6 text-slate-600 font-body">{subtitle}</p>{children}</div></div></div>}

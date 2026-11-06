@@ -37,12 +37,11 @@ export default function ArticleDetail() {
             {article.category} · {new Date(article.published_at).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" })}
           </div>
           <h1 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B2545] tracking-tight leading-[1.1] mt-3">{article.title}</h1>
-          {article.is_demo && <p className="mt-4 p-3 bg-amber-100 text-amber-950 text-sm font-semibold">CONTENUTO DIMOSTRATIVO · Non è una notizia verificata.</p>}
           {article.subtitle && <p className="mt-4 font-serif-display text-lg sm:text-xl text-[#0B2545]/70 italic leading-relaxed">{article.subtitle}</p>}
           <div className="mt-4 pb-4 border-b border-[#E5DFD3] font-mono-accent text-[10px] uppercase tracking-widest text-[#0B2545]/60">
             Di {article.author} · {article.views} letture
           </div>
-          {!article.is_demo && article.source_url && <a href={article.source_url} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-sm text-[#D9531E] underline">Leggi la fonte originale ↗</a>}
+          {article.source_url && <a href={article.source_url} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-sm text-[#D9531E] underline">Leggi la fonte originale ↗</a>}
 
           {/* BODY */}
           {article.video_url && <div className="mt-6"><NewsVideo url={article.video_url} title={article.title} poster={article.cover_image}/></div>}

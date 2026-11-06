@@ -42,7 +42,6 @@ class NewsIntegrationTest extends IntegrationTest {
         String created = mvc.perform(json(post("/api/admin/news"), ARTICLE).cookie(admin))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.is_featured").value(true))
-                .andExpect(jsonPath("$.is_demo").value(false))
                 .andExpect(jsonPath("$.author").value("Redazione Barizone"))
                 .andReturn().getResponse().getContentAsString();
         String id = JsonPath.read(created, "$.id");

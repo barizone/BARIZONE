@@ -52,7 +52,7 @@ public class EditorialSeedService implements ApplicationRunner {
         int inserted = 0;
         for (Map<String, Object> item : items) {
             String id = str(item, "id");
-            if (id == null || Boolean.TRUE.equals(item.get("is_demo")) || repository.existsById(id)) {
+            if (id == null || repository.existsById(id)) {
                 continue;
             }
             repository.save(toArticle(item));

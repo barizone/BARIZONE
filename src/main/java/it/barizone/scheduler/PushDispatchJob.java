@@ -8,7 +8,7 @@ import it.barizone.model.enums.CampaignStatus;
 import it.barizone.repository.AdminSessionRepository;
 import it.barizone.repository.MerchantDeliveryRepository;
 import it.barizone.repository.MerchantMessageRepository;
-import it.barizone.repository.MerchantSessionRepository;
+import it.barizone.repository.AccountSessionRepository;
 import it.barizone.repository.PushCampaignRepository;
 import it.barizone.service.GroupPushDispatcher;
 import it.barizone.service.PushCampaignDispatcher;
@@ -35,19 +35,19 @@ public class PushDispatchJob {
     private final MerchantMessageRepository merchantMessages;
     private final GroupPushDispatcher groupDispatcher;
     private final AdminSessionRepository adminSessions;
-    private final MerchantSessionRepository merchantSessions;
+    private final AccountSessionRepository accountSessions;
 
     public PushDispatchJob(PushCampaignRepository campaigns, PushCampaignDispatcher campaignDispatcher,
                            MerchantDeliveryRepository merchantDeliveries, MerchantMessageRepository merchantMessages,
                            GroupPushDispatcher groupDispatcher, AdminSessionRepository adminSessions,
-                           MerchantSessionRepository merchantSessions) {
+                           AccountSessionRepository accountSessions) {
         this.campaigns = campaigns;
         this.campaignDispatcher = campaignDispatcher;
         this.merchantDeliveries = merchantDeliveries;
         this.merchantMessages = merchantMessages;
         this.groupDispatcher = groupDispatcher;
         this.adminSessions = adminSessions;
-        this.merchantSessions = merchantSessions;
+        this.accountSessions = accountSessions;
     }
 
     @Scheduled(fixedDelayString = "${barizone.push.dispatch-interval-ms:30000}", initialDelay = 30_000)
@@ -74,6 +74,6 @@ public class PushDispatchJob {
     public void cleanup() {
         Instant now = Instant.now();
         adminSessions.deleteExpired(now);
-        merchantSessions.deleteExpired(now);
+        accountSessions.deleteExpired(now);
     }
 }

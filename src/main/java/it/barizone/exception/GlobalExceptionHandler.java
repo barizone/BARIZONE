@@ -77,6 +77,13 @@ public class GlobalExceptionHandler {
         return body(HttpStatus.NOT_FOUND, "Funzione non disponibile.");
     }
 
+    /** Vincoli di unicità violati da richieste simultanee (stessa email, stessa partita IVA). */
+    @ExceptionHandler(org.springframework.dao.DataIntegrityViolationException.class)
+    public ResponseEntity<Map<String, Object>> integrity(org.springframework.dao.DataIntegrityViolationException e) {
+        log.warn("Vincolo del database violato: {}", e.getMostSpecificCause().getMessage());
+        return body(HttpStatus.CONFLICT, "Esiste già una registrazione con questi dati. Riprova accedendo con il tuo account.");
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> unexpected(Exception e) {
         log.error("barizone-api", e);

@@ -13,6 +13,8 @@ barizone:
     password: password-di-servizio
     session-secret: segreto-di-test-lungo-almeno-32-caratteri!!
     email: admin@example.test
+  accounts:
+    bcrypt-strength: 4
   email:
     enabled: true
     resend-api-key: test-key

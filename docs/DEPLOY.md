@@ -67,7 +67,12 @@ nulla di parziale.
 **Chiavi VAPID:** lo script migra la riga `vapid`. Non impostare `VAPID_PUBLIC_KEY`/`VAPID_PRIVATE_KEY`
 con valori diversi: tutti i dispositivi già iscritti smetterebbero di ricevere notifiche.
 
-**Sessioni:** non vengono migrate. Admin ed esercenti devono rifare l'accesso; i clienti dei gruppi
+**Aziende iniziali:** la migrazione `V3` inserisce all'avvio sei aziende dal vecchio archivio (Sartoria Miglionico,
+Caffè del Corso, Libreria Roma, Beauty Studio Poggiofranco, Ciclofficina Japigia, Osteria del Mare Torre), pubblicate ma senza
+partita IVA né dati legali, da completare dall'area admin. Se il tuo archivio D1 non le contiene e non le vuoi,
+eliminale dall'area admin o dal database prima di aprire il sito. Le aziende segnate come demo in D1 non vengono importate.
+
+**Sessioni:** non vengono migrate. L'admin deve rifare l'accesso (gli account utente e attività non esistono in D1: si registrano di nuovo); i clienti dei gruppi
 mantengono il proprio cookie di adesione.
 
 ## Checklist di messa in produzione
@@ -80,5 +85,9 @@ mantengono il proprio cookie di adesione.
 - [ ] `GET /sitemap.xml` usa il dominio corretto.
 - [ ] Una notifica di prova dall'area admin arriva su un dispositivo reale.
 - [ ] Un'iscrizione di prova riceve l'email (se `NEWS_EMAIL_ENABLED=true`).
+- [ ] **Account:** `NEWS_EMAIL_ENABLED=true` e `RESEND_API_KEY` impostati (senza email nessuno riceve il link di conferma e non può accedere).
+      Registra un utente di prova, apri il link e accedi; registra un'attività di prova e approvala dall'area admin.
+- [ ] **Testi legali:** le caselle di registrazione rimandano a "condizioni di utilizzo e informativa sulla privacy",
+      ma nel progetto non esistono pagine con questi testi. Vanno redatti (e collegati alle caselle) prima di aprire le registrazioni.
 - [ ] Il backup automatico del database è attivo e un ripristino di prova è riuscito.
 - [ ] `/actuator/prometheus` e `/api/admin/docs` rispondono solo all'admin (verificato dai test).

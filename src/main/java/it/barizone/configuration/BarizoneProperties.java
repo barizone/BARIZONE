@@ -15,6 +15,7 @@ public record BarizoneProperties(
         String allowedOrigins,
         String contactEmail,
         Admin admin,
+        Accounts accounts,
         Email email,
         Push push,
         Media media,
@@ -24,6 +25,14 @@ public record BarizoneProperties(
                         int maxLoginAttempts, int loginWindowMinutes) {
         public long sessionSeconds() {
             return sessionHours * 3600L;
+        }
+    }
+
+    /** Account di utenti e attività. */
+    public record Accounts(boolean requireEmailVerification, int sessionDays, int bcryptStrength,
+                           String termsVersion) {
+        public long sessionSeconds() {
+            return sessionDays * 86_400L;
         }
     }
 

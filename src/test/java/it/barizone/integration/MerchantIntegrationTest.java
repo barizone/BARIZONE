@@ -19,8 +19,10 @@ import org.springframework.mock.web.MockMultipartFile;
 
 class MerchantIntegrationTest extends IntegrationTest {
 
+    private int sequence;
+
     private String createPublished(Cookie admin, String name, String quartiere) throws Exception {
-        String body = "{\"business_name\":\"" + name + "\",\"quartiere\":\"" + quartiere + "\",\"vat_number\":\"01234567890\","
+        String body = "{\"business_name\":\"" + name + "\",\"quartiere\":\"" + quartiere + "\",\"vat_number\":\"" + vat("012345678" + sequence++) + "\","
                 + "\"email\":\"info@negozio.it\",\"postal_code\":\"70121\",\"maps_url\":\"https://maps.app.goo.gl/abc\"}";
         String id = JsonPath.read(mvc.perform(json(post("/api/admin/merchants"), body).cookie(admin))
                 .andExpect(status().isCreated()).andExpect(jsonPath("$.status").value("draft"))
@@ -47,10 +49,21 @@ class MerchantIntegrationTest extends IntegrationTest {
     }
 
     @Test
+    void sameVatInTwoCompaniesIsRefusedWithAClearMessage() throws Exception {
+        Cookie admin = adminCookie();
+        String body = "{\"business_name\":\"Uno\",\"vat_number\":\"" + vat("0123456789") + "\"}";
+        mvc.perform(json(post("/api/admin/merchants"), body).cookie(admin)).andExpect(status().isCreated());
+        mvc.perform(json(post("/api/admin/merchants"), body.replace("Uno", "Due")).cookie(admin))
+                .andExpect(status().isConflict()).andExpect(jsonPath("$.detail").value("Esiste già un’azienda con questa partita IVA."));
+    }
+
+    @Test
     void validationAndSuspension() throws Exception {
         Cookie admin = adminCookie();
         mvc.perform(json(post("/api/admin/merchants"), "{\"business_name\":\"X\",\"vat_number\":\"123\"}").cookie(admin))
                 .andExpect(status().isBadRequest()).andExpect(jsonPath("$.detail").value("La partita IVA deve contenere 11 cifre."));
+        mvc.perform(json(post("/api/admin/merchants"), "{\"business_name\":\"X\",\"vat_number\":\"01234567890\"}").cookie(admin))
+                .andExpect(jsonPath("$.detail").value("La partita IVA non è valida: controlla le cifre."));
         mvc.perform(json(post("/api/admin/merchants"), "{\"business_name\":\"X\",\"maps_url\":\"https://evil.example/maps\"}").cookie(admin))
                 .andExpect(jsonPath("$.detail").value("Inserisci un collegamento Google Maps valido."));
         mvc.perform(json(post("/api/admin/merchants"), "{\"business_name\":\"\"}").cookie(admin))

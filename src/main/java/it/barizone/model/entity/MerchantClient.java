@@ -24,4 +24,6 @@ public class MerchantClient {
     private UUID id;
     private String tokenHash;
     private Instant createdAt;
+    /** Se valorizzato, il cliente è un utente registrato e le adesioni lo seguono su ogni dispositivo. */
+    private UUID accountId;
 }

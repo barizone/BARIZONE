@@ -14,7 +14,7 @@ import org.springframework.http.ResponseCookie;
 public final class Cookies {
 
     public static final String ADMIN = "__Host-barizone_session";
-    public static final String MERCHANT = "__Host-barizone_merchant";
+    public static final String ACCOUNT = "__Host-barizone_account";
     public static final String CUSTOMER = "__Host-barizone_customer";
 
     private Cookies() {

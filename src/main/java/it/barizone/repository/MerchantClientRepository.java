@@ -9,4 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface MerchantClientRepository extends JpaRepository<MerchantClient, UUID> {
 
     Optional<MerchantClient> findByTokenHash(String tokenHash);
+
+    Optional<MerchantClient> findByAccountId(UUID accountId);
 }

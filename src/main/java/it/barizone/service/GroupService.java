@@ -16,7 +16,6 @@ import it.barizone.model.entity.MerchantDelivery;
 import it.barizone.model.entity.MerchantDeviceSubscription;
 import it.barizone.model.entity.MerchantMembership;
 import it.barizone.model.entity.MerchantMessage;
-import it.barizone.model.entity.MerchantSession;
 import it.barizone.model.enums.CompanyStatus;
 import it.barizone.repository.CompanyProfileRepository;
 import it.barizone.repository.MerchantClientRepository;
@@ -24,7 +23,9 @@ import it.barizone.repository.MerchantDeliveryRepository;
 import it.barizone.repository.MerchantDeviceSubscriptionRepository;
 import it.barizone.repository.MerchantMembershipRepository;
 import it.barizone.repository.MerchantMessageRepository;
-import it.barizone.repository.MerchantSessionRepository;
+import it.barizone.model.enums.AccountRole;
+import it.barizone.model.enums.RegistrationStatus;
+import it.barizone.security.AccountPrincipal;
 import it.barizone.security.AdminPrincipal;
 import it.barizone.util.Texts;
 import it.barizone.util.Tokens;
@@ -42,11 +43,9 @@ import org.springframework.transaction.support.TransactionTemplate;
 @Service
 public class GroupService {
 
-    public static final long STAFF_LIFETIME_SECONDS = 12 * 3600L;
     public static final long CLIENT_LIFETIME_SECONDS = 30 * 86400L;
 
     private final CompanyProfileRepository companies;
-    private final MerchantSessionRepository sessions;
     private final MerchantClientRepository clients;
     private final MerchantMembershipRepository memberships;
     private final MerchantMessageRepository messages;
@@ -55,13 +54,11 @@ public class GroupService {
     private final GroupPushDispatcher dispatcher;
     private final TransactionTemplate tx;
 
-    public GroupService(CompanyProfileRepository companies, MerchantSessionRepository sessions,
-                        MerchantClientRepository clients, MerchantMembershipRepository memberships,
+    public GroupService(CompanyProfileRepository companies, MerchantClientRepository clients, MerchantMembershipRepository memberships,
                         MerchantMessageRepository messages, MerchantDeliveryRepository deliveries,
                         MerchantDeviceSubscriptionRepository devices, GroupPushDispatcher dispatcher,
                         PlatformTransactionManager transactionManager) {
         this.companies = companies;
-        this.sessions = sessions;
         this.clients = clients;
         this.memberships = memberships;
         this.messages = messages;
@@ -81,41 +78,39 @@ public class GroupService {
 
     // ───────────── Identità ─────────────
 
+    /**
+     * Chi gestisce: l'admin (tutte le attività) oppure l'account di un'attività la cui registrazione
+     * è stata approvata e la cui scheda è pubblicata (solo la propria).
+     */
     @Transactional(readOnly = true)
-    public Optional<Staff> staff(Optional<AdminPrincipal> admin, Optional<String> merchantToken) {
+    public Optional<Staff> staff(Optional<AdminPrincipal> admin, Optional<AccountPrincipal> account) {
         if (admin.isPresent()) {
             return Optional.of(new Staff("admin", admin.get().name(), null));
         }
-        return merchantToken.filter(Tokens::isHexToken)
-                .flatMap(t -> sessions.findByTokenHashAndExpiresAtAfter(Tokens.sha256Hex(t), Instant.now()))
-                .map(s -> new Staff("merchant", null, s.getShopId()));
+        return account.filter(a -> a.role() == AccountRole.merchant)
+                .flatMap(a -> companies.findByOwnerAccountId(a.id()))
+                .filter(c -> c.isPublished() && c.getRegistrationStatus() == RegistrationStatus.approved)
+                .map(c -> new Staff("merchant", c.getBusinessName(), c.getId()));
     }
 
-    @Transactional(readOnly = true)
-    public Optional<MerchantClient> client(Optional<String> token) {
-        return token.filter(Tokens::isHexToken).flatMap(t -> clients.findByTokenHash(Tokens.sha256Hex(t)));
-    }
-
-    /** Il link monouso viene scambiato con una sessione nuova: riusarlo non funziona. */
+    /**
+     * Cliente che aderisce alle attività. Se l'utente ha un account, le adesioni sono collegate all'account
+     * (anche quelle fatte prima di accedere con questo dispositivo); altrimenti vale il cookie anonimo.
+     */
     @Transactional
-    public Map.Entry<String, String> merchantLogin(Object token) {
-        if (!(token instanceof String t) || !Tokens.isHexToken(t)) {
-            throw ApiException.unauthorized("Accesso esercente non valido.");
+    public Optional<MerchantClient> client(Optional<AccountPrincipal> account, Optional<String> cookieToken) {
+        Optional<MerchantClient> byCookie = cookieToken.filter(Tokens::isHexToken)
+                .flatMap(t -> clients.findByTokenHash(Tokens.sha256Hex(t)));
+        if (account.isEmpty()) {
+            return byCookie;
         }
-        String hash = Tokens.sha256Hex(t);
-        Instant now = Instant.now();
-        MerchantSession session = sessions.findByTokenHashAndExpiresAtAfter(hash, now)
-                .orElseThrow(() -> ApiException.unauthorized("Accesso scaduto o già utilizzato. Richiedi un nuovo ingresso a Barizone."));
-        String fresh = Tokens.randomToken();
-        if (sessions.rotate(hash, Tokens.sha256Hex(fresh), now.plusSeconds(STAFF_LIFETIME_SECONDS), now) == 0) {
-            throw ApiException.unauthorized("Collegamento già utilizzato.");
+        Optional<MerchantClient> linked = clients.findByAccountId(account.get().id());
+        if (linked.isPresent()) {
+            return linked;
         }
-        return Map.entry(session.getShopId(), fresh);
-    }
-
-    @Transactional
-    public void merchantLogout(Optional<String> token) {
-        token.filter(Tokens::isHexToken).ifPresent(t -> sessions.deleteById(Tokens.sha256Hex(t)));
+        // Prima volta che l'utente accede da un dispositivo con adesioni anonime: le collega all'account.
+        byCookie.filter(c -> c.getAccountId() == null).ifPresent(c -> c.setAccountId(account.get().id()));
+        return byCookie.filter(c -> c.getAccountId() != null && c.getAccountId().equals(account.get().id()));
     }
 
     // ───────────── Stato per admin/esercente ─────────────
@@ -159,19 +154,6 @@ public class GroupService {
     @Transactional(readOnly = true)
     public Map<String, Object> shop(String id) {
         return shape(publishedShop(id));
-    }
-
-    /** Link di accesso monouso per l'esercente, valido 12 ore. Solo admin. */
-    @Transactional
-    public Map<String, Object> grantAccess(Staff user, String shopId, String origin) {
-        publishedShop(shopId);
-        requireManage(user, shopId);
-        if (!"admin".equals(user.role())) {
-            throw ApiException.forbidden("Solo l’amministratore può assegnare gli accessi.");
-        }
-        String token = Tokens.randomToken();
-        sessions.save(new MerchantSession(Tokens.sha256Hex(token), shopId, Instant.now().plusSeconds(STAFF_LIFETIME_SECONDS)));
-        return Map.of("url", origin + "/esercente?accesso=" + token, "expires_hours", 12);
     }
 
     /** Crea una comunicazione per tutti gli aderenti attivi e invia il primo lotto. */
@@ -219,7 +201,7 @@ public class GroupService {
 
     /** Adesione a un'attività. Restituisce il nuovo token cliente se è stato creato. */
     @Transactional
-    public Optional<String> subscribe(Optional<MerchantClient> current, Map<String, Object> body) {
+    public Optional<String> subscribe(Optional<MerchantClient> current, Optional<AccountPrincipal> account, Map<String, Object> body) {
         String alias = text(body, "alias", 60);
         String shopId = text(body, "shop_id", 64);
         if (alias.isEmpty() || shopId.isEmpty() || !Boolean.TRUE.equals(body.get("consent"))) {
@@ -235,7 +217,8 @@ public class GroupService {
             person = current.get();
         } else {
             newToken = Tokens.randomToken();
-            person = clients.save(new MerchantClient(UUID.randomUUID(), Tokens.sha256Hex(newToken), now));
+            person = clients.save(new MerchantClient(UUID.randomUUID(), Tokens.sha256Hex(newToken), now,
+                    account.map(AccountPrincipal::id).orElse(null)));
         }
         MerchantMembership m = memberships.findByClientIdAndShopId(person.getId(), shopId).orElseGet(() -> {
             MerchantMembership fresh = new MerchantMembership();
@@ -337,7 +320,6 @@ public class GroupService {
         m.put("address", c.getAddress().isEmpty() ? "Bari" : c.getAddress());
         m.put("description", c.getDescription());
         m.put("photo", c.getCoverImage());
-        m.put("is_demo", c.isDemo());
         return m;
     }
 

@@ -6,7 +6,7 @@ import { API } from "@/context/AuthContext";
 const blank = {
   entity_type: "Commerciante", maps_url: "", photos: [], business_name: "", owner_name: "", email: "", phone: "", category: "",
   quartiere: "", address: "", description: "", promotion: "", plan: "Gratuito",
-  cover_image: "", legal_name: "", vat_number: "", tax_code: "", legal_address: "", postal_code: "", city: "Bari", province: "BA", pec: "", slogan: "", verified: false, is_demo: false, contract_active: false, notifications_enabled: false,
+  cover_image: "", legal_name: "", vat_number: "", tax_code: "", legal_address: "", postal_code: "", city: "Bari", province: "BA", pec: "", slogan: "", verified: false, contract_active: false, notifications_enabled: false,
 };
 
 export default function MerchantAdmin() {
@@ -60,7 +60,7 @@ export default function MerchantAdmin() {
   const save = async e => {
     e.preventDefault();const publish=e.nativeEvent.submitter?.value==='publish';setBusy(true);setError('');setNotice('');
     try {
-      const payload={...form,notifications_enabled:!!(form.notifications_enabled&&form.contract_active&&!form.is_demo)};
+      const payload={...form,notifications_enabled:!!(form.notifications_enabled&&form.contract_active)};
       const response=editing?await axios.put(`${API}/admin/merchants/${editing}`,payload):await axios.post(`${API}/admin/merchants`,payload);
       setEditing(response.data.id);
       if(publish)await axios.post(`${API}/admin/merchants/${response.data.id}/status`,null,{params:{status:'published'}});
@@ -87,7 +87,6 @@ export default function MerchantAdmin() {
     <h2 className="font-serif-display text-2xl font-bold text-[#0B2545]">{editing ? "Modifica scheda" : "Nuova vetrina"}</h2>
     <p className="font-body text-sm text-slate-600 mt-2">Solo l’amministratore compila le schede. È obbligatorio soltanto il nome dell’attività; tutti gli altri dati sono facoltativi e possono essere aggiunti in seguito. Il salvataggio crea una bozza; la pubblicazione è un’azione separata. Dopo la pubblicazione, “Vedi nel rione” apre il punto del sito in cui compare la scheda.</p>
     <form onSubmit={save} className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white border border-[#E5DFD3] p-5 rounded-md mt-4">
-      <label className="md:col-span-2 flex gap-2 text-sm"><input type="checkbox" checked={form.is_demo} onChange={e=>change('is_demo',e.target.checked)}/> Azienda fittizia per verificare le procedure (sarà riconoscibile nella vetrina pubblica)</label><label className="font-body text-sm">Tipo di vetrina<select className="block border p-2 rounded w-full mt-1" value={form.entity_type} onChange={e=>change('entity_type',e.target.value)}>{['Commerciante','Azienda','Professionista'].map(v=><option key={v}>{v}</option>)}</select></label>
       {field("business_name", "Nome attività (obbligatorio)")}
       {field("owner_name", "Titolare")}
       {field("email", "Email", "email")}
@@ -132,7 +131,7 @@ export default function MerchantAdmin() {
     <h2 className="font-serif-display text-2xl font-bold text-[#0B2545] mt-10">Schede gestite ({items.length})</h2>
     <div className="space-y-3 mt-4">{items.map(item => <article key={item.id} className="bg-white border border-[#E5DFD3] p-4 rounded">
       <h3 className="font-serif-display text-lg font-bold">{item.business_name}</h3>
-      <p className="font-body text-sm">{item.quartiere} · {item.category} · {({draft:'BOZZA · non visibile',published:'PUBBLICATA',suspended:'SOSPESA',archived:'ARCHIVIATA'})[item.status]||item.status} {item.is_demo ? "· ESEMPIO" : ""}</p>
+      <p className="font-body text-sm">{item.quartiere} · {item.category} · {({draft:'BOZZA · non visibile',published:'PUBBLICATA',suspended:'SOSPESA',archived:'ARCHIVIATA'})[item.status]||item.status}</p>
       {item.status==='draft'&&item.publication_issues?.length>0&&<p className="mt-2 text-sm text-amber-900">Per pubblicare completa: {item.publication_issues.join(', ')}.</p>}
       <div className="flex flex-wrap gap-2 mt-3">{item.status==='published'&&<a href={'/quartieri?q='+encodeURIComponent(item.quartiere)+'#attivita-del-rione'} className="border px-3 py-1 rounded">Vedi nel rione</a>}{item.status==='published'&&<a href={'/gestione-clienti?azienda='+item.id} className="border px-3 py-1 rounded">QR e clienti</a>}
         <button onClick={() => edit(item)} className="border px-3 py-1 rounded">Modifica</button>

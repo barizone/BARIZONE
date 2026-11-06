@@ -7,6 +7,7 @@ import it.barizone.exception.ApiException;
 import it.barizone.integration.VapidKeyProvider;
 import it.barizone.model.entity.MerchantClient;
 import it.barizone.security.Cookies;
+import it.barizone.security.CurrentAccount;
 import it.barizone.security.CurrentAdmin;
 import it.barizone.service.GroupService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,9 +22,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-/** Gruppi esercenti (/gestione-clienti, /esercente, /adesioni). */
+/** Gruppi esercenti: adesione dei clienti e comunicazioni delle attività (admin o account attività). */
 @RestController
 @RequestMapping("/api/groups")
 public class GroupController {
@@ -42,22 +42,6 @@ public class GroupController {
         return java.util.Collections.singletonMap("user", staff(request).map(GroupService::staffJson).orElse(null));
     }
 
-    @PostMapping("/merchant-login")
-    public ResponseEntity<Map<String, Object>> merchantLogin(@RequestBody Map<String, Object> body, HttpServletRequest request) {
-        limit(request);
-        Map.Entry<String, String> session = groups.merchantLogin(body.get("token"));
-        return ResponseEntity.ok()
-                .header(HttpHeaders.SET_COOKIE, Cookies.strict(Cookies.MERCHANT, session.getValue(), GroupService.STAFF_LIFETIME_SECONDS))
-                .body(Map.of("role", "merchant", "shop_id", session.getKey()));
-    }
-
-    @PostMapping("/logout")
-    public ResponseEntity<Map<String, Boolean>> logout(HttpServletRequest request) {
-        groups.merchantLogout(Cookies.read(request, Cookies.MERCHANT));
-        return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, Cookies.strict(Cookies.MERCHANT, "", 0))
-                .body(Map.of("ok", true));
-    }
-
     @GetMapping("/state")
     public Map<String, Object> state(@RequestParam(required = false) String activity, HttpServletRequest request) {
         GroupService.Staff user = staff(request).orElseThrow(() -> ApiException.unauthorized("Accesso riservato."));
@@ -67,12 +51,6 @@ public class GroupController {
     @GetMapping("/shops/{id}")
     public Map<String, Object> shop(@PathVariable String id) {
         return groups.shop(id);
-    }
-
-    @PostMapping("/shops/{id}/access")
-    public Map<String, Object> access(@PathVariable String id, HttpServletRequest request) {
-        return groups.grantAccess(staff(request).orElse(null), id,
-                ServletUriComponentsBuilder.fromContextPath(request).replacePath(null).build().toUriString());
     }
 
     @PostMapping("/shops/{id}/messages")
@@ -93,7 +71,7 @@ public class GroupController {
     @PostMapping("/subscribe")
     public ResponseEntity<Map<String, Boolean>> subscribe(@RequestBody Map<String, Object> body, HttpServletRequest request) {
         limit(request);
-        Optional<String> token = groups.subscribe(client(request), body);
+        Optional<String> token = groups.subscribe(client(request), CurrentAccount.get(), body);
         ResponseEntity.BodyBuilder response = ResponseEntity.status(HttpStatus.CREATED);
         token.ifPresent(t -> response.header(HttpHeaders.SET_COOKIE,
                 Cookies.strict(Cookies.CUSTOMER, t, GroupService.CLIENT_LIFETIME_SECONDS)));
@@ -130,11 +108,11 @@ public class GroupController {
     }
 
     private Optional<GroupService.Staff> staff(HttpServletRequest request) {
-        return groups.staff(CurrentAdmin.get(), Cookies.read(request, Cookies.MERCHANT));
+        return groups.staff(CurrentAdmin.get(), CurrentAccount.get());
     }
 
     private Optional<MerchantClient> client(HttpServletRequest request) {
-        return groups.client(Cookies.read(request, Cookies.CUSTOMER));
+        return groups.client(CurrentAccount.get(), Cookies.read(request, Cookies.CUSTOMER));
     }
 
 

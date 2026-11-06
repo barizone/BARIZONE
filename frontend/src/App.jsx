@@ -23,6 +23,15 @@ const MerchantDetail = lazy(() => import("@/pages/MerchantDetail"));
 const PromuoviPage = lazy(() => import("@/pages/PromuoviPage"));
 const AdminPage = lazy(() => import("@/pages/AdminPage"));
 const LoginPage = lazy(() => import("@/pages/AuthPages").then(m => ({ default: m.LoginPage })));
+// Accesso di utenti e attività
+const AccountLoginPage = lazy(() => import("@/pages/AccountAccess").then(m => ({ default: m.AccountLoginPage })));
+const VerifyEmailPage = lazy(() => import("@/pages/AccountAccess").then(m => ({ default: m.VerifyEmailPage })));
+const ForgotPasswordPage = lazy(() => import("@/pages/AccountAccess").then(m => ({ default: m.ForgotPasswordPage })));
+const ResetPasswordPage = lazy(() => import("@/pages/AccountAccess").then(m => ({ default: m.ResetPasswordPage })));
+const RegisterUserPage = lazy(() => import("@/pages/AccountRegister").then(m => ({ default: m.RegisterUserPage })));
+const RegisterBusinessPage = lazy(() => import("@/pages/AccountRegister").then(m => ({ default: m.RegisterBusinessPage })));
+const ProfilePage = lazy(() => import("@/pages/AccountAreas").then(m => ({ default: m.ProfilePage })));
+const BusinessAreaPage = lazy(() => import("@/pages/AccountAreas").then(m => ({ default: m.BusinessAreaPage })));
 
 /** Segnaposto durante il caricamento di una pagina: stessa struttura, nessuno spostamento del layout. */
 function PageSkeleton() {
@@ -67,6 +76,14 @@ function AppRouter() {
             <Route path="/esercente" element={<LiveGroups />} />
             <Route path="/adesioni" element={<LiveGroups />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/accedi" element={<AccountLoginPage />} />
+            <Route path="/registrati" element={<RegisterUserPage />} />
+            <Route path="/registra-attivita" element={<RegisterBusinessPage />} />
+            <Route path="/verifica-email" element={<VerifyEmailPage />} />
+            <Route path="/password-dimenticata" element={<ForgotPasswordPage />} />
+            <Route path="/reimposta-password" element={<ResetPasswordPage />} />
+            <Route path="/profilo" element={<ProfilePage />} />
+            <Route path="/area-attivita" element={<BusinessAreaPage />} />
             <Route path="/register" element={<Navigate to="/" replace />} />
             <Route path="/contatti" element={<Contacts />} />
             <Route path="/notifiche" element={<Notifications />} />

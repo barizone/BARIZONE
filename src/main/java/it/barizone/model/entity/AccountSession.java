@@ -1,6 +1,7 @@
 package it.barizone.model.entity;
 
 import java.time.Instant;
+import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -10,17 +11,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/** Accesso esercente: link monouso generato dall'admin, poi sessione da 12 ore. */
+/** Sessione: nel database c'è solo l'hash SHA-256 del token, mai il token. */
 @Entity
-@Table(name = "merchant_sessions")
+@Table(name = "account_sessions")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MerchantSession {
+public class AccountSession {
 
     @Id
     private String tokenHash;
-    private String shopId;
+    private UUID accountId;
     private Instant expiresAt;
 }

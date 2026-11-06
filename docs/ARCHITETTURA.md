@@ -26,6 +26,31 @@ Browser ──HTTPS──▶ proxy (Caddy/Cloudflare) ──▶ Spring Boot (por
 | Interfacce `EmailGateway`, `WebPushGateway`, `MediaStorage` | Servizi esterni sostituibili e simulabili nei test |
 | Frontend nel JAR | Un solo artefatto e un solo origin: cookie `__Host-` e service worker funzionano senza CORS |
 
+## Accessi: utente, attività, admin
+
+| | Utente | Attività | Admin |
+|---|---|---|---|
+| Archivio | `user_accounts`, ruolo `user` | `user_accounts`, ruolo `merchant`, collegato a una scheda in `company_profiles` | `admin_accounts` |
+| Cookie | `__Host-barizone_account` | `__Host-barizone_account` | `__Host-barizone_session` |
+| Password | BCrypt (costo 12) | BCrypt (costo 12) | PBKDF2 (compatibile con la versione Worker) |
+| Conferma email | sì | sì | no |
+| Area | `/profilo` | `/area-attivita` | `/admin` |
+
+**Registrazione attività.** Il modulo richiede ragione sociale, partita IVA (11 cifre con cifra di controllo), codice fiscale
+(11 cifre o 16 caratteri con carattere di controllo), sede legale completa, PEC, email, telefono, categoria, quartiere, indirizzo,
+descrizione e due dichiarazioni (titolarità, condizioni/privacy). Sono controlli formali: l'esistenza e la titolarità dell'attività
+le verifica l'admin. Stati: `pending` (scheda non visibile) → `approved` (pubblicata e segnata come verificata) oppure `rejected`
+(con motivo mostrato al titolare, che può correggere e reinviare). Una partita IVA non può avere due registrazioni attive.
+Se un'attività approvata cambia ragione sociale, partita IVA o codice fiscale, esce dal sito finché l'admin non la riapprova.
+
+**Sicurezza degli account.** Token di sessione e link email salvati solo come hash; link di conferma validi 48 ore e recupero password 1 ora,
+monouso; il recupero chiude tutte le sessioni aperte; risposte identiche per email già registrate o no (non si rivela chi è iscritto);
+10 tentativi di accesso errati ogni 15 minuti per coppia email+IP; limite orario di registrazioni, reinvii e recuperi per IP
+(le richieste respinte per dati non validi non consumano la quota); password di 10-72 caratteri con almeno una lettera e un numero.
+
+**Adesioni ai gruppi.** Restano possibili senza account (cookie anonimo, utile con il QR in negozio). Con un account, le adesioni
+sono collegate all'utente e lo seguono su ogni dispositivo; se un utente accede da un dispositivo con adesioni anonime, quelle passano al suo account.
+
 ## Differenze rispetto alla versione Worker
 
 | Area | Prima | Ora |
@@ -39,6 +64,11 @@ Browser ──HTTPS──▶ proxy (Caddy/Cloudflare) ──▶ Spring Boot (por
 | Categorie notizie | 6 (le redazionali "Territorio" e "Mobilità" non erano modificabili) | 8 |
 | Cache HTTP | — | `/assets/*` immutabili per 1 anno; HTML e API mai in cache |
 | Sessioni scadute | Rimosse solo al login successivo | Pulizia oraria |
+| Accesso degli esercenti | Link monouso generato dall'admin per ogni attività | Account con registrazione, conferma email e approvazione admin |
+| Account utente | Assente (solo cookie anonimo) | Registrazione, accesso e profilo; il cookie anonimo resta possibile |
+| Dati demo | Eventi, ristoranti e azienda "di esempio" nel codice del frontend; flag `is_demo` | Nessun dato demo: colonna `is_demo` rimossa (migrazione V2); la pagina Eventi mostra le notizie reali della categoria "Eventi" |
+| Aziende iniziali | — | Sei aziende importate dal vecchio archivio con la migrazione V3, modificabili dall'admin |
+| Partita IVA | Solo 11 cifre | Cifra di controllo verificata e unicità tra le schede |
 
 ## Compatibilità verificata dai test
 

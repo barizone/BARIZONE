@@ -19,7 +19,6 @@
     "image_license_url": "https://commons.wikimedia.org/wiki/File:Bari_-_Santo_Spirito.jpg#Licensing",
     "author": "Redazione Barizone · fonte Radio Laser",
     "status": "published",
-    "is_demo": false,
     "is_featured": true
   },
   {
@@ -42,7 +41,6 @@
     "image_license_url": "https://creativecommons.org/licenses/by/2.0/",
     "author": "Redazione Barizone · fonte Telebari",
     "status": "published",
-    "is_demo": false,
     "is_featured": true
   },
   {
@@ -65,7 +63,6 @@
     "image_license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": "Redazione Barizone · fonte Comune di Bari",
     "status": "published",
-    "is_demo": false,
     "is_featured": true
   },
   {
@@ -88,7 +85,6 @@
     "edition_date": "2026-11-02",
     "updated_at": "2026-11-02T10:10:35Z",
     "status": "published",
-    "is_demo": false,
     "is_featured": true
   },
   {
@@ -111,7 +107,6 @@
     "edition_date": "2026-11-02",
     "updated_at": "2026-11-02T10:10:35Z",
     "status": "published",
-    "is_demo": false,
     "is_featured": true
   },
   {
@@ -130,7 +125,6 @@
     "body": "Il 3, 5, 6 e 7 novembre 2026 la Pinacoteca Corrado Giaquinto apre gratuitamente dalle 15 alle 18:30. Si potranno visitare le collezioni e la mostra “Errare è umano” di Biagio Caldarelli. Sede: lungomare Nazario Sauro 27, quarto piano del Palazzo della Provincia. Programma pubblicato il 30 ottobre.",
     "subtitle": "Il 3, 5, 6 e 7 novembre 2026 la Pinacoteca Corrado Giaquinto apre gratuitamente dalle 15 alle 18:30. Si potranno visitare le collezioni e la mostra “Errare è umano” di Biagio Caldarelli. Sede: lungomare Nazario Sauro 27, quarto piano del Palazzo della Provincia. Programma pubblicato il 30 ottobre.",
     "status": "published",
-    "is_demo": false,
     "is_featured": true,
     "published_at": "2026-10-30T12:00:00+01:00",
     "updated_at": "2026-10-31T08:00:00Z",
@@ -153,7 +147,6 @@
     "body": "Sabato 31 ottobre: parata dalle 18 e passeggiata fotografica dalle 18 alle 20, con partenza dai giardini Chiara Lubich. Letture alla libreria Svoltastorie, via Volta 37, dalle 18 alle 21; appuntamento musicale Wanted Record, via Bottalico 10, dalle 19 alle 21. Il programma delle Notti Bianche del Municipio 2 è riportato da BariViva il 30 ottobre.",
     "subtitle": "Sabato 31 ottobre: parata dalle 18 e passeggiata fotografica dalle 18 alle 20, con partenza dai giardini Chiara Lubich. Letture alla libreria Svoltastorie, via Volta 37, dalle 18 alle 21; appuntamento musicale Wanted Record, via Bottalico 10, dalle 19 alle 21. Il programma delle Notti Bianche del Municipio 2 è riportato da BariViva il 30 ottobre.",
     "status": "published",
-    "is_demo": false,
     "is_featured": true,
     "published_at": "2026-10-30T12:00:00+01:00",
     "updated_at": "2026-10-31T08:00:00Z",
@@ -171,7 +164,6 @@
     "source_url": "https://www.bariviva.it/notizie/ottobre-rosa-al-san-paolo-di-bari-sos-seno-un-percorso-dedicato-alle-urgenze-senologiche/",
     "published_at": "2026-10-20T11:01:00Z",
     "updated_at": "2026-10-20T16:00:00Z",
-    "is_demo": false,
     "is_featured": true,
     "author": "Redazione Barizone · fonte BariViva",
     "cover_image": "https://bari.gocity.it/library/media/whatsapp_image_2026_10_20_at_093343j.jpg",
@@ -193,7 +185,6 @@
     "source_url": "https://www.bariviva.it/notizie/brt-prendono-forma-le-stazioni-di-ricarica-lenta-dei-bus-elettrici-in-via-caldarola-largo-pacha-via-di-vittorio-e-nel-deposito-amtab/",
     "published_at": "2026-10-20T00:05:00+02:00",
     "updated_at": "2026-10-20T16:00:00Z",
-    "is_demo": false,
     "is_featured": true,
     "author": "Redazione Barizone · fonte BariViva",
     "cover_image": "https://bari.gocity.it/library/media/19_10_26_brt_prendono_forma_le_aree_di_ricovero_e_ricarica_lentej.jpg",
@@ -221,7 +212,6 @@
     "source_url": "https://www.bariviva.it/notizie/ferrotramviaria-e-fai-aprono-le-porte-dell-ex-stazione-ferroviaria-di-via-napoli-a-bari/",
     "published_at": "2026-10-20T00:05:00+02:00",
     "updated_at": "2026-10-20T16:00:00Z",
-    "is_demo": false,
     "is_featured": true,
     "author": "Redazione Barizone · fonte BariViva",
     "cover_image": "https://bari.gocity.it/library/media/petr0074.jpg",
@@ -247,7 +237,6 @@
     "source_url": "https://www.bariviva.it/notizie/il-polo-socio-sanitario-arriva-a-palese-e-stanic-assistenza-e-ascolto-nei-quartieri/",
     "published_at": "2026-10-19T00:00:00+02:00",
     "updated_at": "2026-10-20T16:00:00Z",
-    "is_demo": false,
     "is_featured": false,
     "author": "Redazione Barizone · fonte BariViva",
     "cover_image": "https://bari.gocity.it/library/media/polo_socio_sanitario_di_prossimita_j.jpg",
@@ -274,7 +263,6 @@
     "source_url": "https://www.bariviva.it/notizie/ferrovie-del-sud-est-proclamato-uno-sciopero-di-quattro-ore-per-venerdi-23-ottobre/",
     "published_at": "2026-10-19T00:00:00+02:00",
     "updated_at": "2026-10-20T16:00:00Z",
-    "is_demo": false,
     "is_featured": false,
     "author": "Redazione Barizone · fonte BariViva",
     "cover_image": "https://bari.gocity.it/library/media/atr220_022.jpg",
@@ -297,7 +285,6 @@
     "source_url": "https://www.borderline24.com/2026/10/18/caro-benzina-previste-nuove-proteste-tir-pronti-a-sfilare-da-altamura-a-bari/",
     "published_at": "2026-10-18T13:43:00Z",
     "updated_at": "2026-10-19T08:00:00Z",
-    "is_demo": false,
     "is_featured": false,
     "author": "Redazione Barizone · fonte Borderline24",
     "cover_image": "",
@@ -318,7 +305,6 @@
     "source_url": "https://www.telebari.it/storie/268909-bari-lasciano-il-lavoro-sicuro-e-aprono-un-negozio-di-abiti-vintage-2-amiche-e-il-sogno-di-ciclica-foto.html",
     "published_at": "2026-10-19T06:10:00Z",
     "updated_at": "2026-10-19T08:00:00Z",
-    "is_demo": false,
     "is_featured": false,
     "author": "Redazione Barizone · fonte Telebari",
     "cover_image": "",
@@ -340,7 +326,6 @@
     "source_url": "https://www.amtab.it/it/9-uncategorised/3548-linee-4-11-11-e-30",
     "published_at": null,
     "updated_at": "2026-10-19T08:00:00Z",
-    "is_demo": false,
     "is_featured": false,
     "author": "Redazione Barizone · fonte AMTAB",
     "cover_image": "",
@@ -362,7 +347,6 @@
     "source_url": "https://www.telebari.it/spettacoli/268735-acqua-che-non-si-aspetta-a-centanni-dallalluvione-di-bari-mostra-fotografica-a-palazzo-starita-foto.html",
     "published_at": "2026-10-16T00:00:00Z",
     "updated_at": "2026-10-19T08:00:00Z",
-    "is_demo": false,
     "is_featured": false,
     "author": "Redazione Barizone · fonte Telebari",
     "image_source_url": "https://commons.wikimedia.org/wiki/File:Bari,_piazza_del_ferrarese_01.jpg",
@@ -386,7 +370,6 @@
     "source_url": "https://www.telebari.it/attualita/268880-inaugurato-listituto-confucio-un-po-di-cina-a-bari-vecchia-lingua-e-cultura-cinese-ma-non-solo-video.html",
     "published_at": "2026-10-18T00:00:00Z",
     "updated_at": "2026-10-19T08:00:00Z",
-    "is_demo": false,
     "is_featured": false,
     "author": "Redazione Barizone · fonte Telebari",
     "cover_image": "",

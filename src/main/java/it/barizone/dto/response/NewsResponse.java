@@ -29,7 +29,6 @@ public record NewsResponse(
         String author,
         NewsStatus status,
         @JsonProperty("is_featured") boolean featured,
-        @JsonProperty("is_demo") boolean demo,
         int views,
         String factDate,
         LocalDate editionDate,
@@ -42,7 +41,7 @@ public record NewsResponse(
                 n.getCategory(), n.getQuartiere(),
                 n.getNeighborhoods() == null || n.getNeighborhoods().isEmpty() ? null : n.getNeighborhoods(),
                 n.getCoverImage(), n.getCoverCaption(), n.getImageSourceUrl(), n.getImageLicenseUrl(),
-                n.getVideoUrl(), n.getSourceUrl(), n.getAuthor(), n.getStatus(), n.isFeatured(), false,
+                n.getVideoUrl(), n.getSourceUrl(), n.getAuthor(), n.getStatus(), n.isFeatured(),
                 n.getViews(), n.getFactDate(), n.getEditionDate(), n.getExpiresAt(), n.getPublishedAt(),
                 n.getUpdatedAt());
     }

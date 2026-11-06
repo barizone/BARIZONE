@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Newspaper, MapPin, Store, Menu, X, LogOut, LogIn, Shield } from 'lucide-react';
+import { Home, Newspaper, MapPin, Store, Menu, X, LogOut, LogIn, Shield, User, Building2, UserPlus } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { TABS, MORE, isActive } from './navigation';
 import './MobileNav.css';
@@ -13,7 +13,7 @@ const ICONS = { home: Home, news: Newspaper, map: MapPin, shop: Store };
  */
 export default function MobileNav() {
   const { pathname } = useLocation();
-  const { user, logout } = useAuth();
+  const { user, logout, account, accountLogout } = useAuth();
   const [open, setOpen] = useState(false);
   const sheetRef = useRef(null);
   const triggerRef = useRef(null);
@@ -34,7 +34,7 @@ export default function MobileNav() {
     };
   }, [open]);
 
-  const moreActive = MORE.some(m => isActive(pathname, m.to)) || pathname === '/admin' || pathname === '/login';
+  const moreActive = MORE.some(m => isActive(pathname, m.to)) || ['/admin', '/login', '/accedi', '/registrati', '/registra-attivita', '/profilo', '/area-attivita'].includes(pathname);
 
   return (
     <>
@@ -56,13 +56,24 @@ export default function MobileNav() {
                 <Link to={item.to} aria-current={isActive(pathname, item.to) ? 'page' : undefined}>{item.label}</Link>
               </li>
             ))}
+            {account && (
+              <li><Link to={account.role === 'merchant' ? '/area-attivita' : '/profilo'}>
+                {account.role === 'merchant' ? <Building2 size={18} aria-hidden="true" /> : <User size={18} aria-hidden="true" />}
+                {account.role === 'merchant' ? 'Area attività' : 'Il mio profilo'}</Link></li>
+            )}
+            {!account && !user && (<>
+              <li><Link to="/accedi"><LogIn size={18} aria-hidden="true" />Accedi</Link></li>
+              <li><Link to="/registrati"><UserPlus size={18} aria-hidden="true" />Registrati</Link></li>
+              <li><Link to="/registra-attivita"><Building2 size={18} aria-hidden="true" />Registra la tua attività</Link></li>
+            </>)}
             {user?.role === 'admin' && (
               <li><Link to="/admin" aria-current={pathname === '/admin' ? 'page' : undefined}><Shield size={18} aria-hidden="true" />Area amministrazione</Link></li>
             )}
+            {account && <li><button type="button" onClick={() => { accountLogout(); setOpen(false); }}><LogOut size={18} aria-hidden="true" />Esci</button></li>}
             <li>
               {user
-                ? <button type="button" onClick={() => { logout(); setOpen(false); }}><LogOut size={18} aria-hidden="true" />Esci</button>
-                : <Link to="/login"><LogIn size={18} aria-hidden="true" />Accesso redazione</Link>}
+                ? <button type="button" onClick={() => { logout(); setOpen(false); }}><LogOut size={18} aria-hidden="true" />Esci (redazione)</button>
+                : <Link to="/login"><Shield size={18} aria-hidden="true" />Accesso redazione</Link>}
             </li>
           </ul>
         </nav>

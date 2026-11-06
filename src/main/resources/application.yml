@@ -80,6 +80,14 @@ barizone:
     session-hours: 12
     max-login-attempts: 10
     login-window-minutes: 15
+  accounts:
+    # true = l'email va confermata con un link prima del primo accesso (consigliato in produzione).
+    # false solo in sviluppo locale, dove non c'è un servizio email.
+    require-email-verification: ${REQUIRE_EMAIL_VERIFICATION:true}
+    session-days: 14
+    bcrypt-strength: 12
+    # Versione dell'informativa/condizioni accettate in registrazione (registrata con la data)
+    terms-version: accounts-v1
   email:
     enabled: ${NEWS_EMAIL_ENABLED:false}
     resend-api-key: ${RESEND_API_KEY:}

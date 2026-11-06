@@ -14,7 +14,7 @@ export default function NeighborhoodNews(){
  const select=(rione,view=section)=>setParams({...rione?{q:rione}:{},sezione:view});
  const [merchants,setMerchants]=useState([]),[merchantError,setMerchantError]=useState(false);
  const [items,setItems]=useState([]),[error,setError]=useState(false),[loading,setLoading]=useState(true);
- useEffect(()=>{setLoading(true);setItems([]);let active=true;const refresh=()=>axios.get(`${API}/news`,{params:{scope:'neighborhood',neighborhood:q||undefined,limit:100}}).then(r=>{if(active){setItems(r.data.filter(n=>!n.is_demo&&n.source_url));setError(false)}}).catch(()=>{if(active)setError(true)}).finally(()=>{if(active)setLoading(false)});refresh();const timer=setInterval(refresh,60000);return()=>{active=false;clearInterval(timer)}},[q]);
+ useEffect(()=>{setLoading(true);setItems([]);let active=true;const refresh=()=>axios.get(`${API}/news`,{params:{scope:'neighborhood',neighborhood:q||undefined,limit:100}}).then(r=>{if(active){setItems(r.data.filter(n=>n.source_url));setError(false)}}).catch(()=>{if(active)setError(true)}).finally(()=>{if(active)setLoading(false)});refresh();const timer=setInterval(refresh,60000);return()=>{active=false;clearInterval(timer)}},[q]);
  useEffect(()=>{let active=true;setMerchants([]);const refresh=()=>axios.get(`${API}/merchants`,{params:q&&q!=='Tutta Bari'?{quartiere:q}:{}}).then(r=>{if(active){setMerchants(r.data);setMerchantError(false)}}).catch(()=>{if(active)setMerchantError(true)});refresh();const timer=setInterval(refresh,30000);return()=>{active=false;clearInterval(timer)}},[q]);
  const local=selectRioneNews(items,q,section);
  const restaurants=selectRioneRestaurants(merchants,q);

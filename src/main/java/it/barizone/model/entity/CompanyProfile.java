@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.barizone.model.enums.CompanyStatus;
+import it.barizone.model.enums.RegistrationStatus;
+import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -54,7 +56,6 @@ public class CompanyProfile {
     @Column(columnDefinition = "text[]")
     private List<String> photos = new ArrayList<>();
 
-    private boolean isDemo;
     private boolean verified;
     private boolean contractActive;
     private boolean notificationsEnabled;
@@ -63,6 +64,18 @@ public class CompanyProfile {
     private CompanyStatus status = CompanyStatus.draft;
 
     private Instant updatedAt;
+
+    /** Account che ha registrato l'attività (null per le schede inserite dall'admin o dal database). */
+    private UUID ownerAccountId;
+
+    @Enumerated(EnumType.STRING)
+    private RegistrationStatus registrationStatus = RegistrationStatus.approved;
+
+    private Instant registrationAt;
+    private Instant reviewedAt;
+    private String reviewNote = "";
+    private String termsVersion;
+    private Instant termsAcceptedAt;
 
     public boolean isPublished() {
         return status == CompanyStatus.published;

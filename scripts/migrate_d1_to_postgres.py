@@ -13,7 +13,7 @@ Uso:
 Cosa viene migrato: notizie, aziende (il JSON diventa colonne), foto, vetrina del giorno,
 contatti, chiavi VAPID (indispensabili: senza, i dispositivi iscritti non ricevono più notifiche),
 account admin, iscritti e consensi, iscrizioni push, campagne e consegne, gruppi esercenti.
-Non vengono migrate: sessioni (si rientra con login), tentativi di login, tabelle demo_*.
+Non vengono migrate: sessioni (si rientra con login), tentativi di login, tabelle demo_* e\naziende segnate come demo.
 
 L'import è idempotente (ON CONFLICT DO NOTHING) e avviene in un'unica transazione.
 Solo libreria standard di Python: nessuna dipendenza da installare.
@@ -84,8 +84,12 @@ def main(path):
             "published_at": ts(r["published_at"]), "updated_at": ts(r["updated_at"]),
         })
 
+    skipped_demo = 0
     for r in rows(db, "company_profiles"):
         d = json.loads(r["data"])
+        if d.get("is_demo") is True:
+            skipped_demo += 1  # i dati demo non si importano
+            continue
         text = lambda k: q((d.get(k) or "") if isinstance(d.get(k), str) else "")
         insert("company_profiles", {
             "id": q(r["id"]), "business_name": text("business_name"), "owner_name": text("owner_name"),
@@ -96,7 +100,7 @@ def main(path):
             "description": text("description"), "slogan": text("slogan"), "promotion": text("promotion"),
             "plan": text("plan"), "cover_image": text("cover_image"), "maps_url": text("maps_url"),
             "entity_type": text("entity_type"), "photos": arr([p for p in d.get("photos", []) if isinstance(p, str)]),
-            "is_demo": q(d.get("is_demo") is True), "verified": q(d.get("verified") is True),
+            "verified": q(d.get("verified") is True),
             "contract_active": q(d.get("contract_active") is True), "notifications_enabled": "FALSE",
             "status": q(r["status"]), "updated_at": ts(r["updated_at"]),
         })
@@ -171,7 +175,7 @@ def main(path):
 
     out.append("COMMIT;")
     print("\n".join(out))
-    print(f"-- {len(out) - 2} righe preparate per l'import", file=sys.stderr)
+    print(f"-- {len(out) - 2} righe preparate per l'import ({skipped_demo} aziende demo escluse)", file=sys.stderr)
 
 
 if __name__ == "__main__":

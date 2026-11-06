@@ -4,6 +4,17 @@ Portale di quartiere per Bari: notizie, aziende, vetrina del giorno, iscrizioni 
 notifiche push e gruppi esercenti. Versione 2: backend **Java 21 + Spring Boot 4**, database
 **PostgreSQL**, frontend **React 19 + Vite** ottimizzato per mobile, distribuiti come un unico JAR.
 
+## Tre tipi di accesso
+
+| Accesso | Dove | Cosa può fare |
+|---|---|---|
+| **Utente** | `/registrati`, `/accedi` | Ritrova le proprie adesioni alle attività su ogni dispositivo |
+| **Attività** | `/registra-attivita`, `/accedi`, `/area-attivita` | Registra l'attività con partita IVA e dati obbligatori; dopo la verifica dell'admin la scheda è pubblicata; gestisce i propri dati e scrive ai clienti |
+| **Admin** | `/login`, `/admin` | Notizie, schede, campagne, iscritti, verifica delle registrazioni |
+
+La navigazione, le notizie e l'adesione anonima a un'attività (con QR) restano senza account.
+Le aziende non sono scritte nel codice: vengono dal database (registrazione, area admin o SQL).
+
 Riscrive la versione Cloudflare Worker + D1 (repository `bari-hub`) mantenendo **lo stesso contratto API**:
 stessi percorsi, stesso JSON, stessi messaggi, stesse password admin, stesse chiavi VAPID.
 
@@ -78,6 +89,7 @@ VPS, PaaS o Kubernetes.
 | `PUBLIC_ORIGIN` | Origin pubblico (es. `https://barizone.it`): sitemap, link email, CSRF |
 | `ALLOWED_ORIGINS` | Altri origin ammessi, separati da virgola |
 | `ADMIN_PASSWORD`, `SESSION_SECRET`, `ADMIN_EMAIL` | Accesso admin di riserva (come nella versione Worker) |
+| `REQUIRE_EMAIL_VERIFICATION` | `true` (predefinito): l'email degli account va confermata con un link. `false` solo in sviluppo senza email |
 | `NEWS_EMAIL_ENABLED`, `RESEND_API_KEY` | Email di conferma iscrizione |
 | `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY` | Facoltative: se vuote, chiavi migrate in DB o generate al primo avvio |
 | `PORT` | Porta HTTP (predefinita 8080) |

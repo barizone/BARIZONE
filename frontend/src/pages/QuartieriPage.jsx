@@ -93,7 +93,7 @@ export default function QuartieriPage() {
               <div>
                 <div className="font-mono-accent text-[10px] uppercase tracking-widest" style={{ color: QUARTIERI_COLORS[m.quartiere] }}>{m.category}</div>
                 <h3 className="font-serif-display font-bold text-xl text-[#0B2545] mt-1">{m.business_name}</h3>
-                <div className="text-xs font-body text-slate-600 mt-1 flex items-center gap-1"><MapPin className="w-3 h-3"/> {m.quartiere}{!m.is_demo && ` · ${m.address}`}</div>
+                <div className="text-xs font-body text-slate-600 mt-1 flex items-center gap-1"><MapPin className="w-3 h-3"/> {m.quartiere}{m.address && ` · ${m.address}`}</div>
               </div>
             </div>
             {m.owner_name&&<p className="mt-3 text-sm text-slate-600">Proprietario: {m.owner_name}</p>}{m.vat_number&&<p className="mt-1 text-sm text-slate-600">Partita IVA: {m.vat_number}</p>}{m.slogan&&<p className="mt-3 font-semibold text-[#D9531E]">{m.slogan}</p>}<p className="mt-3 font-body text-sm text-slate-700 leading-relaxed">{m.description}</p>
@@ -101,7 +101,7 @@ export default function QuartieriPage() {
               <div className="mt-4 p-3 bg-[#F8F5EE] border-l-2 border-[#D9531E] rounded-r flex items-start gap-2">
                 <Tag className="w-4 h-4 text-[#D9531E] mt-0.5 shrink-0" />
                 <div>
-                  {!m.is_demo && <div className="font-mono-accent text-[9px] uppercase tracking-widest text-[#D9531E]">Promo</div>}
+                  <div className="font-mono-accent text-[9px] uppercase tracking-widest text-[#D9531E]">Promo</div>
                   <div className="font-body text-sm text-[#0B2545]">{m.promotion}</div>
                 </div>
               </div>

@@ -2,15 +2,25 @@ package it.barizone.repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import it.barizone.model.entity.CompanyProfile;
 import it.barizone.model.enums.CompanyStatus;
+import it.barizone.model.enums.RegistrationStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 public interface CompanyProfileRepository extends JpaRepository<CompanyProfile, String> {
 
     List<CompanyProfile> findAllByOrderByUpdatedAtDesc();
+
+    Optional<CompanyProfile> findByOwnerAccountId(UUID accountId);
+
+    boolean existsByVatNumberAndRegistrationStatusNot(String vatNumber, RegistrationStatus status);
+
+    boolean existsByVatNumberAndIdNotAndRegistrationStatusNot(String vatNumber, String id, RegistrationStatus status);
+
+    List<CompanyProfile> findByRegistrationStatusOrderByRegistrationAtAsc(RegistrationStatus status);
 
     List<CompanyProfile> findByStatusOrderByUpdatedAtDesc(CompanyStatus status);
 

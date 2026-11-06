@@ -36,7 +36,8 @@ public class SeoService {
 
     public String robots() {
         return "User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /admin\nDisallow: /login\n"
-                + "Disallow: /gestione-clienti\nDisallow: /esercente\nDisallow: /adesioni\n\n"
+                + "Disallow: /gestione-clienti\nDisallow: /esercente\nDisallow: /adesioni\n"
+                + "Disallow: /accedi\nDisallow: /profilo\nDisallow: /area-attivita\nDisallow: /verifica-email\nDisallow: /reimposta-password\n\n"
                 + "Sitemap: " + origin() + "/sitemap.xml\n";
     }
 
@@ -51,7 +52,6 @@ public class SeoService {
                 .filter(n -> n.getSourceUrl() != null && !n.getSourceUrl().isBlank())
                 .forEach(n -> urls.add(origin() + "/notizie/" + encode(n.getId())));
         companies.findByStatusOrderByUpdatedAtDesc(CompanyStatus.published).stream()
-                .filter(c -> !c.isDemo())
                 .forEach(c -> urls.add(origin() + "/aziende/" + encode(c.getId())));
         StringBuilder xml = new StringBuilder("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
                 .append("<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n");

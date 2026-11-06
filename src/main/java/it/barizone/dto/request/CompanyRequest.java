@@ -8,5 +8,5 @@ public record CompanyRequest(
         String legalAddress, String postalCode, String city, String province, String email, String pec,
         String phone, String category, String quartiere, String address, String description, String slogan,
         String promotion, String plan, String coverImage, String mapsUrl, String entityType,
-        List<Object> photos, Boolean isDemo, Boolean verified, Boolean contractActive) {
+        List<Object> photos, Boolean verified, Boolean contractActive) {
 }
